@@ -13,15 +13,84 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\Soldiers">
+      <UniqueIdentifier>{ac67adbf-25d8-47a0-9ad5-5d9252ae9140}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Soldiers">
+      <UniqueIdentifier>{a30d774a-90d7-412b-9846-8916de8cd9dc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="String.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Specializations.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Medals.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Captain.h">
+      <Filter>Header Files\Soldiers</Filter>
+    </ClInclude>
+    <ClInclude Include="Colonel.h">
+      <Filter>Header Files\Soldiers</Filter>
+    </ClInclude>
+    <ClInclude Include="Corporal.h">
+      <Filter>Header Files\Soldiers</Filter>
+    </ClInclude>
+    <ClInclude Include="General.h">
+      <Filter>Header Files\Soldiers</Filter>
+    </ClInclude>
+    <ClInclude Include="Lieutenant.h">
+      <Filter>Header Files\Soldiers</Filter>
+    </ClInclude>
+    <ClInclude Include="Major.h">
+      <Filter>Header Files\Soldiers</Filter>
+    </ClInclude>
+    <ClInclude Include="Private.h">
+      <Filter>Header Files\Soldiers</Filter>
+    </ClInclude>
+    <ClInclude Include="Sergeant.h">
+      <Filter>Header Files\Soldiers</Filter>
+    </ClInclude>
+    <ClInclude Include="Soldier.h">
+      <Filter>Header Files\Soldiers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="String.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Soldier.cpp">
+      <Filter>Source Files\Soldiers</Filter>
+    </ClCompile>
+    <ClCompile Include="Sergeant.cpp">
+      <Filter>Source Files\Soldiers</Filter>
+    </ClCompile>
+    <ClCompile Include="Private.cpp">
+      <Filter>Source Files\Soldiers</Filter>
+    </ClCompile>
+    <ClCompile Include="Major.cpp">
+      <Filter>Source Files\Soldiers</Filter>
+    </ClCompile>
+    <ClCompile Include="Lieutenant.cpp">
+      <Filter>Source Files\Soldiers</Filter>
+    </ClCompile>
+    <ClCompile Include="General.cpp">
+      <Filter>Source Files\Soldiers</Filter>
+    </ClCompile>
+    <ClCompile Include="Corporal.cpp">
+      <Filter>Source Files\Soldiers</Filter>
+    </ClCompile>
+    <ClCompile Include="Colonel.cpp">
+      <Filter>Source Files\Soldiers</Filter>
+    </ClCompile>
+    <ClCompile Include="Captain.cpp">
+      <Filter>Source Files\Soldiers</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

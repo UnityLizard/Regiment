@@ -139,9 +139,30 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Captain.h" />
+    <ClInclude Include="Colonel.h" />
+    <ClInclude Include="Corporal.h" />
+    <ClInclude Include="General.h" />
+    <ClInclude Include="Lieutenant.h" />
+    <ClInclude Include="Major.h" />
+    <ClInclude Include="Medals.h" />
+    <ClInclude Include="Private.h" />
+    <ClInclude Include="Sergeant.h" />
+    <ClInclude Include="Soldier.h" />
+    <ClInclude Include="Specializations.h" />
     <ClInclude Include="String.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Captain.cpp" />
+    <ClCompile Include="Colonel.cpp" />
+    <ClCompile Include="Corporal.cpp" />
+    <ClCompile Include="General.cpp" />
+    <ClCompile Include="Lieutenant.cpp" />
+    <ClCompile Include="Major.cpp" />
+    <ClCompile Include="Private.cpp" />
+    <ClCompile Include="Sergeant.cpp" />
+    <ClCompile Include="Soldier.cpp" />
+    <ClCompile Include="Source.cpp" />
     <ClCompile Include="String.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
