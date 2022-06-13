@@ -16,6 +16,11 @@ String Colonel::getRank() const
 	return "COL";
 }
 
+Soldier* Colonel::clone() const
+{
+	return new Colonel(*this);
+}
+
 bool Colonel::command(const Soldier* soldier) const
 {
 	if (strcmp(soldier->getRank().c_str(), "COL") == 0 || strcmp(soldier->getRank().c_str(), "GEN") == 0)

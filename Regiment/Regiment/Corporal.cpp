@@ -16,6 +16,11 @@ String Corporal::getRank() const
 	return "CPL";
 }
 
+Soldier* Corporal::clone() const
+{
+	return new Corporal(*this);
+}
+
 void Corporal::patrol() const
 {
 	std::cout << "CPL " << name << " is patrolling." << std::endl << std::endl;

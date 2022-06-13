@@ -19,15 +19,12 @@
     <Filter Include="Header Files\Soldiers">
       <UniqueIdentifier>{a30d774a-90d7-412b-9846-8916de8cd9dc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Enums">
+      <UniqueIdentifier>{2ad1d4f3-3eac-4c36-807d-32a7f759b1bf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="String.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Specializations.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Medals.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Captain.h">
@@ -56,6 +53,18 @@
     </ClInclude>
     <ClInclude Include="Soldier.h">
       <Filter>Header Files\Soldiers</Filter>
+    </ClInclude>
+    <ClInclude Include="Specializations.h">
+      <Filter>Header Files\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="Medals.h">
+      <Filter>Header Files\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Regiment.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

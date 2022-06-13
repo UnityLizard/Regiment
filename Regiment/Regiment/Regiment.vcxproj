@@ -147,10 +147,12 @@
     <ClInclude Include="Major.h" />
     <ClInclude Include="Medals.h" />
     <ClInclude Include="Private.h" />
+    <ClInclude Include="Regiment.h" />
     <ClInclude Include="Sergeant.h" />
     <ClInclude Include="Soldier.h" />
     <ClInclude Include="Specializations.h" />
     <ClInclude Include="String.h" />
+    <ClInclude Include="Vector.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Captain.cpp" />

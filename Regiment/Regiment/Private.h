@@ -10,5 +10,7 @@ public:
 	
 	String getRank() const override;
 
+	Soldier* clone() const override;
+
 	void patrol() const;
 };

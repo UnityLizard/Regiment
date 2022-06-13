@@ -14,6 +14,11 @@ String Private::getRank() const
 	return "PVT";
 }
 
+Soldier* Private::clone() const
+{
+	return new Private(*this);
+}
+
 void Private::patrol() const
 {
 	std::cout << "PVT " << name << " is patrolling." << std::endl;

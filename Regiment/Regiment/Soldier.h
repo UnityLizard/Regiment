@@ -21,6 +21,8 @@ public:
 	Medals getMedal(const size_t) const;
 	size_t getMedalsCount() const;
 
+	virtual Soldier* clone() const = 0;
+
 	void soldierInfo() const;
 	bool isActive() const;
 	bool recieveMedal(const Medals);
