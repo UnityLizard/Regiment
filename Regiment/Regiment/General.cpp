@@ -1,20 +1,30 @@
 #include "General.h"
 
-String General::getName() const
+General::General(const Soldier* other)
 {
-	String temp("GEN ");
-	temp.concat(name);
-
-	return temp;
+	name = other->getName();
+	age = other->getAge();
+	active = other->isActive();
+	specialization = other->getSpecialization();
+	medalsCount = other->getMedalsCount();
+	for (size_t i = 0; i < medalsCount; i++)
+		medals[i] = other->getMedal(i);
 }
 
-void General::soldierInfo() const
+String General::getRank() const
 {
-	std::cout << "Name: GEN ";
-	generalInfo();
+	return "GEN";
 }
 
-void General::command(const Soldier* soldier) const
+bool General::command(const Soldier* soldier) const
 {
-	std::cout << "GEN " << name << " is giving " << soldier->getName() << " an order." << std::endl;
+	if (strcmp(soldier->getRank().c_str(), "GEN") == 0)
+		return false;
+	std::cout << "GEN " << name << " is giving " << soldier->getRank() << " " << soldier->getName() << " an order." << std::endl;
+	return true;
+}
+
+void General::writeReport() const
+{
+	std::cout << "GEN " << name << " is writing a report." << std::endl;
 }

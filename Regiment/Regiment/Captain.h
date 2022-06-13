@@ -5,10 +5,9 @@
 class Captain : public Soldier
 {
 public:
-	Captain(const String&, const unsigned);
+	Captain(const Soldier*);
 	
-	String getName() const override;
+	String getRank() const override;
 
-	void soldierInfo() const override;
-	void command(const Soldier*) const;
+	bool command(const Soldier*) const;
 };

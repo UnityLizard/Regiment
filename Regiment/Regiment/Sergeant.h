@@ -5,8 +5,9 @@
 class Sergeant : public Soldier
 {
 public:
-	String getName() const override;
+	Sergeant(const Soldier*, const Specializations);
 
-	void soldierInfo() const override;
-	void command(const Soldier*) const;
+	String getRank() const override;
+
+	bool command(const Soldier*) const;
 };

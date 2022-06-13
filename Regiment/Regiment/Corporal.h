@@ -5,8 +5,9 @@
 class Corporal : public Soldier
 {
 public:
-	String getName() const override;
+	Corporal(const Soldier*);
 
-	void soldierInfo() const override;
+	String getRank() const override;
+
 	void patrol() const;
 };

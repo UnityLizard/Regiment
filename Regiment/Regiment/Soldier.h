@@ -8,19 +8,22 @@ class Soldier
 {
 protected:
 	String name;
-	unsigned age;
 	bool active;
+	unsigned age;
 	Specializations specialization;
 	Medals medals[ALL_MEDALS];
 	size_t medalsCount = 0;
 public:
-	virtual String getName() const = 0;
+	virtual String getRank() const = 0;
+	String getName() const;
+	unsigned getAge() const;
+	Specializations getSpecialization() const;
+	Medals getMedal(const size_t) const;
+	size_t getMedalsCount() const;
 
-	virtual void soldierInfo() const = 0;
+	void soldierInfo() const;
 	bool isActive() const;
 	bool recieveMedal(const Medals);
-protected:
-	void generalInfo() const;
 private:
 	void specializationDisplay() const;
 	void medalsDisplay(const Medals) const;

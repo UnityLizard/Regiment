@@ -1,20 +1,27 @@
 #include "Sergeant.h"
 
-String Sergeant::getName() const
+Sergeant::Sergeant(const Soldier* other, const Specializations spec)
 {
-	String temp("SGT ");
-	temp.concat(name);
-
-	return temp;
+	name = other->getName();
+	age = other->getAge();
+	active = other->isActive();
+	specialization = spec;
+	medalsCount = other->getMedalsCount();
+	for (size_t i = 0; i < medalsCount; i++)
+		medals[i] = other->getMedal(i);
 }
 
-void Sergeant::soldierInfo() const
+String Sergeant::getRank() const
 {
-	std::cout << "Name: SGT ";
-	generalInfo();
+	return "SGT";
 }
 
-void Sergeant::command(const Soldier* soldier) const
+bool Sergeant::command(const Soldier* soldier) const
 {
-	std::cout << "SGT " << name << " is giving " << soldier->getName() << " an order." << std::endl;
+	if (strcmp(soldier->getRank().c_str(), "SGT") == 0 || strcmp(soldier->getRank().c_str(), "LT") == 0
+		|| strcmp(soldier->getRank().c_str(), "CPT") == 0 || strcmp(soldier->getRank().c_str(), "MAJ") == 0
+		|| strcmp(soldier->getRank().c_str(), "COL") == 0 || strcmp(soldier->getRank().c_str(), "GEN") == 0)
+		return false;
+	std::cout << "SGT " << name << " is giving " << soldier->getRank() << " " << soldier->getName() << " an order." << std::endl;
+	return true;
 }

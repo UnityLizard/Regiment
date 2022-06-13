@@ -1,20 +1,31 @@
 #include "Major.h"
 
-String Major::getName() const
+Major::Major(const Soldier* other)
 {
-	String temp("MAJ ");
-	temp.concat(name);
-
-	return temp;
+	name = other->getName();
+	age = other->getAge();
+	active = other->isActive();
+	specialization = other->getSpecialization();
+	medalsCount = other->getMedalsCount();
+	for (size_t i = 0; i < medalsCount; i++)
+		medals[i] = other->getMedal(i);
 }
 
-void Major::soldierInfo() const
+String Major::getRank() const
 {
-	std::cout << "Name: MAJ ";
-	generalInfo();
+	return "MAJ";
 }
 
-void Major::command(const Soldier* soldier) const
+bool Major::command(const Soldier* soldier) const
 {
-	std::cout << "MAJ " << name << " is giving " << soldier->getName() << " an order." << std::endl;
+	if (strcmp(soldier->getRank().c_str(), "MAJ") == 0 || strcmp(soldier->getRank().c_str(), "COL") == 0
+		|| strcmp(soldier->getRank().c_str(), "GEN") == 0)
+		return false;
+	std::cout << "MAJ " << name << " is giving " << soldier->getRank() << " " << soldier->getName() << " an order." << std::endl;
+	return true;
+}
+
+void Major::writeReport() const
+{
+	std::cout << "MAJ " << name << " is writing a report." << std::endl;
 }

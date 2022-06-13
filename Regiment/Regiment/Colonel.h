@@ -5,8 +5,10 @@
 class Colonel : public Soldier
 {
 public:
-	String getName() const override;
+	Colonel(const Soldier*);
 
-	void soldierInfo() const override;
-	void command(const Soldier*) const;
+	String getRank() const override;
+
+	bool command(const Soldier*) const;
+	void writeReport() const;
 };

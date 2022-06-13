@@ -1,20 +1,30 @@
 #include "Colonel.h"
 
-String Colonel::getName() const
+Colonel::Colonel(const Soldier* other)
 {
-	String temp("COL ");
-	temp.concat(name);
-
-	return temp;
+	name = other->getName();
+	age = other->getAge();
+	active = other->isActive();
+	specialization = other->getSpecialization();
+	medalsCount = other->getMedalsCount();
+	for (size_t i = 0; i < medalsCount; i++)
+		medals[i] = other->getMedal(i);
 }
 
-void Colonel::soldierInfo() const
+String Colonel::getRank() const
 {
-	std::cout << "Name: COL ";
-	generalInfo();
+	return "COL";
 }
 
-void Colonel::command(const Soldier* soldier) const
+bool Colonel::command(const Soldier* soldier) const
 {
-	std::cout << "COL " << name << " is giving " << soldier->getName() << " an order." << std::endl;
+	if (strcmp(soldier->getRank().c_str(), "COL") == 0 || strcmp(soldier->getRank().c_str(), "GEN") == 0)
+		return false;
+	std::cout << "COL " << name << " is giving " << soldier->getRank() << " " << soldier->getName() << " an order." << std::endl;
+	return true;
+}
+
+void Colonel::writeReport() const
+{
+	std::cout << "COL " << name << " is writing a report." << std::endl;
 }

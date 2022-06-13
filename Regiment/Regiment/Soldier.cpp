@@ -1,23 +1,33 @@
 #include "Soldier.h"
 
-bool Soldier::isActive() const
+String Soldier::getName() const
 {
-    return active;
+    return name;
 }
 
-bool Soldier::recieveMedal(const Medals medal)
+unsigned Soldier::getAge() const
 {
-    for (size_t i = 0; i < medalsCount; i++)
-        if (medal == medals[i])
-            return false;
-    
-    medals[medalsCount++] = medal;
-    return true;
+    return age;
 }
 
-void Soldier::generalInfo() const
+Specializations Soldier::getSpecialization() const
 {
-    std::cout << name << std::endl;
+    return specialization;
+}
+
+Medals Soldier::getMedal(const size_t index) const
+{
+    return medals[index];
+}
+
+size_t Soldier::getMedalsCount() const
+{
+    return medalsCount;
+}
+
+void Soldier::soldierInfo() const
+{
+    std::cout << "Name: " << getRank() << " " << name << std::endl;
     std::cout << "Age: " << age << std::endl;
     std::cout << "Status: " << (active ? "active" : "inative") << std::endl;
     std::cout << "Specialization: ";
@@ -33,6 +43,21 @@ void Soldier::generalInfo() const
     if (medalsCount == 0)
         std::cout << "none";
     std::cout << std::endl;
+}
+
+bool Soldier::isActive() const
+{
+    return active;
+}
+
+bool Soldier::recieveMedal(const Medals medal)
+{
+    for (size_t i = 0; i < medalsCount; i++)
+        if (medal == medals[i])
+            return false;
+    
+    medals[medalsCount++] = medal;
+    return true;
 }
 
 void Soldier::specializationDisplay() const

@@ -1,17 +1,19 @@
 #include "Corporal.h"
 
-String Corporal::getName() const
+Corporal::Corporal(const Soldier* other)
 {
-	String temp("CPL ");
-	temp.concat(name);
-
-	return temp;
+	name = other->getName();
+	age = other->getAge();
+	active = other->isActive();
+	specialization = other->getSpecialization();
+	medalsCount = other->getMedalsCount();
+	for (size_t i = 0; i < medalsCount; i++)
+		medals[i] = other->getMedal(i);
 }
 
-void Corporal::soldierInfo() const
+String Corporal::getRank() const
 {
-	std::cout << "Name: CPL ";
-	generalInfo();
+	return "CPL";
 }
 
 void Corporal::patrol() const

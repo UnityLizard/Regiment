@@ -1,29 +1,26 @@
 #include "Captain.h"
 
-Captain::Captain(const String& name, const unsigned age)
+Captain::Captain(const Soldier* other)
 {
-	this->name = name;
-	this->age = age;
-	active = true;
-	specialization = Specializations::Assault;
-	medalsCount = 0;
+	name = other->getName();
+	age = other->getAge();
+	active = other->isActive();
+	specialization = other->getSpecialization();
+	medalsCount = other->getMedalsCount();
+	for (size_t i = 0; i < medalsCount; i++)
+		medals[i] = other->getMedal(i);
 }
 
-String Captain::getName() const
+String Captain::getRank() const
 {
-	String temp("CPT ");
-	temp.concat(name);
-
-	return temp;
+	return "CPT";
 }
 
-void Captain::soldierInfo() const
+bool Captain::command(const Soldier* soldier) const
 {
-	std::cout << "Name: CPT ";
-	generalInfo();
-}
-
-void Captain::command(const Soldier* soldier) const
-{
-	std::cout << "CPT " << name << " is giving " << soldier->getName() << " an order." << std::endl;
+	if (strcmp(soldier->getRank().c_str(), "CPT") == 0 || strcmp(soldier->getRank().c_str(), "MAJ") == 0
+		|| strcmp(soldier->getRank().c_str(), "COL") == 0 || strcmp(soldier->getRank().c_str(), "GEN") == 0)
+		return false;
+	std::cout << "CPT " << name << " is giving " << soldier->getRank() << " " << soldier->getName() << " an order." << std::endl;
+	return true;
 }

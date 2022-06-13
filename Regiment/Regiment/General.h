@@ -5,8 +5,10 @@
 class General : public Soldier
 {
 public:
-	String getName() const override;
+	General(const Soldier*);
 
-	void soldierInfo() const override;
-	void command(const Soldier*) const;
+	String getRank() const override;
+
+	bool command(const Soldier*) const;
+	void writeReport() const;
 };

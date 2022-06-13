@@ -9,18 +9,9 @@ Private::Private(const String& name, const unsigned age)
 	medalsCount = 0;
 }
 
-String Private::getName() const
+String Private::getRank() const
 {
-	String temp("PVT ");
-	temp.concat(name);
-
-	return temp;
-}
-
-void Private::soldierInfo() const
-{
-	std::cout << "Name: PVT ";
-	generalInfo();
+	return "PVT";
 }
 
 void Private::patrol() const
