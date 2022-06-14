@@ -1,9 +1,9 @@
 #include "MachineGun.h"
 
-MachineGun::MachineGun(const float weight, const Condition cond, const unsigned int ammo)
+MachineGun::MachineGun(const float weight, const unsigned int ammo)
 {
 	this->weight = weight;
-	this->condition = cond;
+	this->condition = Perfect;
 	this->ammoReserve = ammo;
 }
 
