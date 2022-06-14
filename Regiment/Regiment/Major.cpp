@@ -11,7 +11,7 @@ Major::Major(const Soldier* other)
 		medals[i] = other->getMedal(i);
 }
 
-String Major::getRank() const
+const char* Major::getRank() const
 {
 	return "MAJ";
 }
@@ -23,8 +23,8 @@ Soldier* Major::clone() const
 
 bool Major::command(const Soldier* soldier) const
 {
-	if (strcmp(soldier->getRank().c_str(), "MAJ") == 0 || strcmp(soldier->getRank().c_str(), "COL") == 0
-		|| strcmp(soldier->getRank().c_str(), "GEN") == 0)
+	if (strcmp(soldier->getRank(), "MAJ") == 0 || strcmp(soldier->getRank(), "COL") == 0
+		|| strcmp(soldier->getRank(), "GEN") == 0)
 		return false;
 	std::cout << "MAJ " << name << " is giving " << soldier->getRank() << " " << soldier->getName() << " an order." << std::endl;
 	return true;

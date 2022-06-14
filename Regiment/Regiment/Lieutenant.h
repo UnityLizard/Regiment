@@ -7,7 +7,7 @@ class Lieutenant : public Soldier
 public:
 	Lieutenant(const Soldier*);
 
-	String getRank() const override;
+	const char* getRank() const override;
 
 	Soldier* clone() const override;
 

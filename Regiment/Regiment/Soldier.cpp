@@ -1,26 +1,26 @@
 #include "Soldier.h"
 
-String Soldier::getName() const
+const char* Soldier::getName() const
 {
-    return name;
+    return name.c_str();
 }
 
-unsigned Soldier::getAge() const
+const unsigned Soldier::getAge() const
 {
     return age;
 }
 
-Specializations Soldier::getSpecialization() const
+const Specializations Soldier::getSpecialization() const
 {
     return specialization;
 }
 
-Medals Soldier::getMedal(const size_t index) const
+const Medals Soldier::getMedal(const size_t index) const
 {
     return medals[index];
 }
 
-size_t Soldier::getMedalsCount() const
+const size_t Soldier::getMedalsCount() const
 {
     return medalsCount;
 }

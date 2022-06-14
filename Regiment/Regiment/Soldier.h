@@ -14,12 +14,12 @@ protected:
 	Medals medals[ALL_MEDALS];
 	size_t medalsCount = 0;
 public:
-	virtual String getRank() const = 0;
-	String getName() const;
-	unsigned getAge() const;
-	Specializations getSpecialization() const;
-	Medals getMedal(const size_t) const;
-	size_t getMedalsCount() const;
+	virtual const char* getRank() const = 0;
+	const char* getName() const;
+	const unsigned getAge() const;
+	const Specializations getSpecialization() const;
+	const Medals getMedal(const size_t) const;
+	const size_t getMedalsCount() const;
 
 	virtual Soldier* clone() const = 0;
 

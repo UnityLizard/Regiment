@@ -11,7 +11,7 @@ Corporal::Corporal(const Soldier* other)
 		medals[i] = other->getMedal(i);
 }
 
-String Corporal::getRank() const
+const char* Corporal::getRank() const
 {
 	return "CPL";
 }

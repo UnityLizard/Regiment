@@ -7,7 +7,7 @@ class Corporal : public Soldier
 public:
 	Corporal(const Soldier*);
 
-	String getRank() const override;
+	const char* getRank() const override;
 
 	Soldier* clone() const override;
 

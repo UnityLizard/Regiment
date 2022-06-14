@@ -11,7 +11,7 @@ Sergeant::Sergeant(const Soldier* other, const Specializations spec)
 		medals[i] = other->getMedal(i);
 }
 
-String Sergeant::getRank() const
+const char* Sergeant::getRank() const
 {
 	return "SGT";
 }
@@ -23,9 +23,9 @@ Soldier* Sergeant::clone() const
 
 bool Sergeant::command(const Soldier* soldier) const
 {
-	if (strcmp(soldier->getRank().c_str(), "SGT") == 0 || strcmp(soldier->getRank().c_str(), "LT") == 0
-		|| strcmp(soldier->getRank().c_str(), "CPT") == 0 || strcmp(soldier->getRank().c_str(), "MAJ") == 0
-		|| strcmp(soldier->getRank().c_str(), "COL") == 0 || strcmp(soldier->getRank().c_str(), "GEN") == 0)
+	if (strcmp(soldier->getRank(), "SGT") == 0 || strcmp(soldier->getRank(), "LT") == 0
+		|| strcmp(soldier->getRank(), "CPT") == 0 || strcmp(soldier->getRank(), "MAJ") == 0
+		|| strcmp(soldier->getRank(), "COL") == 0 || strcmp(soldier->getRank(), "GEN") == 0)
 		return false;
 	std::cout << "SGT " << name << " is giving " << soldier->getRank() << " " << soldier->getName() << " an order." << std::endl;
 	return true;

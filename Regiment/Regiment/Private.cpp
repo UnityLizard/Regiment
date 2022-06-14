@@ -9,7 +9,7 @@ Private::Private(const String& name, const unsigned age)
 	medalsCount = 0;
 }
 
-String Private::getRank() const
+const char* Private::getRank() const
 {
 	return "PVT";
 }
