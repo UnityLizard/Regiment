@@ -1,9 +1,9 @@
 #include "Pistol.h"
 
-Pistol::Pistol(const float weight, const Condition cond, const unsigned int ammo)
+Pistol::Pistol(const float weight, const unsigned int ammo)
 {
 	this->weight = weight;
-	this->condition = cond;
+	this->condition = Perfect;
 	this->ammoReserve = ammo;
 }
 
