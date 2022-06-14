@@ -6,7 +6,7 @@ class SniperRiffle : public Weapons
 {
 	static unsigned int ammoReserve;
 public:
-	SniperRiffle(const float, const Condition, const unsigned int);
+	SniperRiffle(const float, const unsigned int);
 	
 	const unsigned int getAmmoReserve()const;
 	unsigned int restockAmmo();
