@@ -19,8 +19,20 @@
     <Filter Include="Header Files\Soldiers">
       <UniqueIdentifier>{a30d774a-90d7-412b-9846-8916de8cd9dc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Weapons">
+      <UniqueIdentifier>{cd30820d-066e-4841-b29f-179b5daaa3d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Machinery">
+      <UniqueIdentifier>{9a7a4330-629e-4211-9a1b-63df67bbf6d6}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Header Files\Enums">
       <UniqueIdentifier>{2ad1d4f3-3eac-4c36-807d-32a7f759b1bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Machinery">
+      <UniqueIdentifier>{cda56211-9c45-4206-b81e-b592b7c58045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Weapons">
+      <UniqueIdentifier>{46dbd9ef-41c7-4941-9d6d-8379d6ace4d6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -66,6 +78,51 @@
     <ClInclude Include="Regiment.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Anti_Tank.h">
+      <Filter>Header Files\Machinery</Filter>
+    </ClInclude>
+    <ClInclude Include="Artillery.h">
+      <Filter>Header Files\Machinery</Filter>
+    </ClInclude>
+    <ClInclude Include="Heavy_Tank.h">
+      <Filter>Header Files\Machinery</Filter>
+    </ClInclude>
+    <ClInclude Include="Jeep.h">
+      <Filter>Header Files\Machinery</Filter>
+    </ClInclude>
+    <ClInclude Include="Light_Tank.h">
+      <Filter>Header Files\Machinery</Filter>
+    </ClInclude>
+    <ClInclude Include="Machinery.h">
+      <Filter>Header Files\Machinery</Filter>
+    </ClInclude>
+    <ClInclude Include="Mortar.h">
+      <Filter>Header Files\Machinery</Filter>
+    </ClInclude>
+    <ClInclude Include="Tank.h">
+      <Filter>Header Files\Machinery</Filter>
+    </ClInclude>
+    <ClInclude Include="Vehicle.h">
+      <Filter>Header Files\Machinery</Filter>
+    </ClInclude>
+    <ClInclude Include="Condition.h">
+      <Filter>Header Files\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="MachineGun.h">
+      <Filter>Header Files\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="Pistol.h">
+      <Filter>Header Files\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="SniperRiffle.h">
+      <Filter>Header Files\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="Weapons.h">
+      <Filter>Header Files\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="AssaultRiffle.h">
+      <Filter>Header Files\Weapons</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="String.cpp">
@@ -100,6 +157,51 @@
     </ClCompile>
     <ClCompile Include="Captain.cpp">
       <Filter>Source Files\Soldiers</Filter>
+    </ClCompile>
+    <ClCompile Include="Regiment.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MachineGun.cpp">
+      <Filter>Source Files\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="Pistol.cpp">
+      <Filter>Source Files\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="SniperRiffle.cpp">
+      <Filter>Source Files\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="Weapons.cpp">
+      <Filter>Source Files\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="Vehicle.cpp">
+      <Filter>Source Files\Machinery</Filter>
+    </ClCompile>
+    <ClCompile Include="Tank.cpp">
+      <Filter>Source Files\Machinery</Filter>
+    </ClCompile>
+    <ClCompile Include="Mortar.cpp">
+      <Filter>Source Files\Machinery</Filter>
+    </ClCompile>
+    <ClCompile Include="Machinery.cpp">
+      <Filter>Source Files\Machinery</Filter>
+    </ClCompile>
+    <ClCompile Include="Light_Tank.cpp">
+      <Filter>Source Files\Machinery</Filter>
+    </ClCompile>
+    <ClCompile Include="Jeep.cpp">
+      <Filter>Source Files\Machinery</Filter>
+    </ClCompile>
+    <ClCompile Include="Heavy_Tank.cpp">
+      <Filter>Source Files\Machinery</Filter>
+    </ClCompile>
+    <ClCompile Include="Artillery.cpp">
+      <Filter>Source Files\Machinery</Filter>
+    </ClCompile>
+    <ClCompile Include="Anti_Tank.cpp">
+      <Filter>Source Files\Machinery</Filter>
+    </ClCompile>
+    <ClCompile Include="AssaultRiffle.cpp">
+      <Filter>Source Files\Weapons</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

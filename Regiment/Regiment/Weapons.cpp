@@ -12,9 +12,9 @@ Condition Weapons::getCondition() const
 
 void Weapons::fix()
 {
-	if (condition != Perfect)
+	if (condition != Condition::Perfect)
 	{
-		condition = Perfect;
+		condition = Condition::Perfect;
 	}
 	else
 	{

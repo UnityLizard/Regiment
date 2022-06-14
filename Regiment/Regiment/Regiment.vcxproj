@@ -139,33 +139,63 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Anti_Tank.h" />
+    <ClInclude Include="Artillery.h" />
+    <ClInclude Include="AssaultRiffle.h" />
     <ClInclude Include="Captain.h" />
     <ClInclude Include="Colonel.h" />
+    <ClInclude Include="Condition.h" />
     <ClInclude Include="Corporal.h" />
     <ClInclude Include="General.h" />
+    <ClInclude Include="Heavy_Tank.h" />
+    <ClInclude Include="Jeep.h" />
     <ClInclude Include="Lieutenant.h" />
+    <ClInclude Include="Light_Tank.h" />
+    <ClInclude Include="MachineGun.h" />
+    <ClInclude Include="Machinery.h" />
     <ClInclude Include="Major.h" />
     <ClInclude Include="Medals.h" />
+    <ClInclude Include="Mortar.h" />
+    <ClInclude Include="Pistol.h" />
     <ClInclude Include="Private.h" />
     <ClInclude Include="Regiment.h" />
     <ClInclude Include="Sergeant.h" />
+    <ClInclude Include="SniperRiffle.h" />
     <ClInclude Include="Soldier.h" />
     <ClInclude Include="Specializations.h" />
     <ClInclude Include="String.h" />
+    <ClInclude Include="Tank.h" />
     <ClInclude Include="Vector.hpp" />
+    <ClInclude Include="Vehicle.h" />
+    <ClInclude Include="Weapons.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Anti_Tank.cpp" />
+    <ClCompile Include="Artillery.cpp" />
+    <ClCompile Include="AssaultRiffle.cpp" />
     <ClCompile Include="Captain.cpp" />
     <ClCompile Include="Colonel.cpp" />
     <ClCompile Include="Corporal.cpp" />
     <ClCompile Include="General.cpp" />
+    <ClCompile Include="Heavy_Tank.cpp" />
+    <ClCompile Include="Jeep.cpp" />
     <ClCompile Include="Lieutenant.cpp" />
+    <ClCompile Include="Light_Tank.cpp" />
+    <ClCompile Include="MachineGun.cpp" />
+    <ClCompile Include="Machinery.cpp" />
     <ClCompile Include="Major.cpp" />
+    <ClCompile Include="Mortar.cpp" />
+    <ClCompile Include="Pistol.cpp" />
     <ClCompile Include="Private.cpp" />
+    <ClCompile Include="Regiment.cpp" />
     <ClCompile Include="Sergeant.cpp" />
+    <ClCompile Include="SniperRiffle.cpp" />
     <ClCompile Include="Soldier.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="String.cpp" />
+    <ClCompile Include="Tank.cpp" />
+    <ClCompile Include="Vehicle.cpp" />
+    <ClCompile Include="Weapons.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

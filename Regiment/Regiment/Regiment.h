@@ -2,6 +2,8 @@
 
 #include "Vector.hpp"
 #include "Soldier.h"
+//#include "Machinery.h"
+//#include "Weapons.h"
 
 class Regiment
 {

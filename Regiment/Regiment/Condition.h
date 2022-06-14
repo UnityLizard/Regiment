@@ -1,6 +1,6 @@
 #pragma once
 
-enum Condition {
+enum class Condition {
 	Perfect,
 	Good,
 	Poor

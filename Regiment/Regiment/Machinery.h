@@ -1,6 +1,7 @@
 #pragma once
+#include "Condition.h"
 #include<iostream>
-enum Condition{Perfect,Poor,Good};
+
 class Machinery
 {
 protected:
