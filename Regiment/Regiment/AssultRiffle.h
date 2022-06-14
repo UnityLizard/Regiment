@@ -6,7 +6,7 @@ class AssultRiffle : public Weapons
 {
 	static unsigned ammoReserve;
 public:
-	AssultRiffle(const float weight, const Condition cond, const unsigned int ammo);
+	AssultRiffle(const float weight, const unsigned int ammo);
 	
 	unsigned int getAmmoReserve()const;
 	unsigned int restockAmmo();
