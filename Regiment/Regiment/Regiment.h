@@ -3,13 +3,13 @@
 #include "Vector.hpp"
 #include "Soldier.h"
 //#include "Machinery.h"
-//#include "Weapons.h"
+#include "Weapons.h"
 
 class Regiment
 {
 	Vector<Soldier*> soldiers;
 	//Vector<Machinery*> machinery;
-	//Vector<Weapons*> weapons;
+	Vector<Weapons*> weapons;
 public:
 	void regimentStatus() const;
 	void soldiersStatus() const;
@@ -17,7 +17,7 @@ public:
 	void weaponsStatus() const;
 	void addSoldier(Soldier*);
 	//void addMachinery(Machinery*);
-	//void addWeapont(Weapon*);
+	void addWeapon(Weapons*);
 	bool removeSoldier(size_t);
 	bool removeMachinery(size_t);
 	bool removeWeapon(size_t);
