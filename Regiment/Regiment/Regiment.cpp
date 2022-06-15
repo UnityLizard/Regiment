@@ -37,66 +37,66 @@ void Regiment::weaponsStatus() const
 
 	for (size_t i = 0; i < weapons.getSize(); i++)
 	{
-		if (weapons[i]->getType() == 1)
+		if (weapons[i]->getType() == Type::AssaultRiffle)
 		{
 			ARcount++;
-			if (weapons[i]->getCondition() == 1)
+			if (weapons[i]->getCondition() == Condition::Perfect)
 			{
 				ARperfect++;
 			}
-			else if (weapons[i]->getCondition() == 2)
+			else if (weapons[i]->getCondition() == Condition::Good)
 			{
 				ARgood++;
 			}
-			else if (weapons[i]->getCondition() == 3)
+			else if (weapons[i]->getCondition() == Condition::Poor)
 			{
 				ARpoor++;
 			}
 		}
-		else if (weapons[i]->getType() == 2)
+		else if (weapons[i]->getType() == Type::MachineGun)
 		{
 			MGcount++;
-			if (weapons[i]->getCondition() == 1)
+			if (weapons[i]->getCondition() == Condition::Perfect)
 			{
 				MGperfect++;
 			}
-			else if (weapons[i]->getCondition() == 2)
+			else if (weapons[i]->getCondition() == Condition::Good)
 			{
 				MGgood++;
 			}
-			else if (weapons[i]->getCondition() == 3)
+			else if (weapons[i]->getCondition() == Condition::Poor)
 			{
 				MGpoor++;
 			}
 		}
-		else if (weapons[i]->getType() == 3)
+		else if (weapons[i]->getType() == Type::Pistol)
 		{
 			Pcount++;
-			if (weapons[i]->getCondition() == 1)
+			if (weapons[i]->getCondition() == Condition::Perfect)
 			{
 				Pperfect++;
 			}
-			else if (weapons[i]->getCondition() == 2)
+			else if (weapons[i]->getCondition() == Condition::Good)
 			{
 				Pgood++;
 			}
-			else if (weapons[i]->getCondition() == 3)
+			else if (weapons[i]->getCondition() == Condition::Poor)
 			{
 				Ppoor++;
 			}
 		}
-		else if (weapons[i]->getType() == 4)
+		else if (weapons[i]->getType() == Type::SniperRiffle)
 		{
 			SRcount++;
-			if (weapons[i]->getCondition() == 1)
+			if (weapons[i]->getCondition() == Condition::Perfect)
 			{
 				SRperfect++;
 			}
-			else if (weapons[i]->getCondition() == 2)
+			else if (weapons[i]->getCondition() == Condition::Good)
 			{
 				SRgood++;
 			}
-			else if (weapons[i]->getCondition() == 3)
+			else if (weapons[i]->getCondition() == Condition::Poor)
 			{
 				SRpoor++;
 			}
@@ -226,7 +226,7 @@ void Regiment::restockAmmoAR()
 {
 	for (size_t i = 0; i < weapons.getSize(); i++)
 	{
-		if (weapons[i]->getType() == 1)
+		if (weapons[i]->getType() == Type::AssaultRiffle)
 		{
 			weapons[i]->restockAmmo();
 		}
@@ -238,7 +238,7 @@ void Regiment::restockAmmoMG()
 {
 	for (size_t i = 0; i < weapons.getSize(); i++)
 	{
-		if (weapons[i]->getType() == 2)
+		if (weapons[i]->getType() == Type::MachineGun)
 		{
 			weapons[i]->restockAmmo();
 		}
@@ -250,7 +250,7 @@ void Regiment::restockAmmoP()
 {
 	for (size_t i = 0; i < weapons.getSize(); i++)
 	{
-		if (weapons[i]->getType() == 3)
+		if (weapons[i]->getType() == Type::Pistol)
 		{
 			weapons[i]->restockAmmo();
 		}
@@ -262,7 +262,7 @@ void Regiment::restockAmmoSR()
 {
 	for (size_t i = 0; i < weapons.getSize(); i++)
 	{
-		if (weapons[i]->getType() == 4)
+		if (weapons[i]->getType() == Type::SniperRiffle)
 		{
 			weapons[i]->restockAmmo();
 		}
