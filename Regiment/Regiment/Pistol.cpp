@@ -1,8 +1,15 @@
 #include "Pistol.h"
 
-Pistol::Pistol(const float weight, const unsigned int ammo)
+Pistol::Pistol()
 {
-	this->weight = weight;
+	this->condition = Perfect;
+	ammoReserve = 0;
+	caliber = 9; //most common one
+}
+
+Pistol::Pistol(const float caliber, const unsigned int ammo)
+{
+	this->caliber = caliber;
 	this->condition = Perfect;
 	this->ammoReserve = ammo;
 }
@@ -12,16 +19,10 @@ const unsigned int Pistol::getAmmoReserve() const
 	return ammoReserve;
 }
 
-unsigned int Pistol::restockAmmo()
+void Pistol::restockAmmo()
 {
-	if (ammoReserve == 0)
-	{
-		ammoReserve = MAX_AMMO_P;
-	}
-	else
-	{
-		std::cout << "There is still some ammo left!";
-	}
+	
+	ammoReserve = MAX_AMMO_P;
 }
 
 Weapons* Pistol::clone() const

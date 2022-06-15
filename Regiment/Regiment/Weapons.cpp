@@ -1,8 +1,8 @@
 #include "Weapons.h"
 
-float Weapons::getWeight() const
+float Weapons::getCaliber() const
 {
-	return this->weight;
+	return this->caliber;
 }
 
 Condition Weapons::getCondition() const
@@ -12,9 +12,9 @@ Condition Weapons::getCondition() const
 
 void Weapons::fix()
 {
-	if (condition != Condition::Perfect)
+	if (condition != Perfect)
 	{
-		condition = Condition::Perfect;
+		condition = Perfect;
 	}
 	else
 	{

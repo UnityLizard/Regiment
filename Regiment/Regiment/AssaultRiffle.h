@@ -10,7 +10,7 @@ public:
 	AssaultRiffle(const float caliber, const unsigned int ammo);
 	
 	unsigned int getAmmoReserve()const;
-	unsigned int restockAmmo();
+	void restockAmmo() override;
 	Weapons* clone() const override;
 
 };

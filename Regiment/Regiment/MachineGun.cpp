@@ -1,8 +1,15 @@
 #include "MachineGun.h"
 
-MachineGun::MachineGun(const float weight, const unsigned int ammo)
+MachineGun::MachineGun()
 {
-	this->weight = weight;
+	this->condition = Perfect;
+	ammoReserve = 0;
+	caliber = 12.7; //most common one
+}
+
+MachineGun::MachineGun(const float caliber, const unsigned int ammo)
+{
+	this->caliber = caliber;
 	this->condition = Perfect;
 	this->ammoReserve = ammo;
 }
@@ -12,16 +19,9 @@ const unsigned int MachineGun::getAmmoReserve() const
 	return ammoReserve;
 }
 
-unsigned int MachineGun::restockAmmo()
+void MachineGun::restockAmmo()
 {
-	if (ammoReserve == 0)
-	{
-		ammoReserve = MAX_AMMO_MG;
-	}
-	else
-	{
-		std::cout << "There is still some ammo left!";
-	}
+	ammoReserve = MAX_AMMO_MG;
 }
 
 Weapons* MachineGun::clone() const

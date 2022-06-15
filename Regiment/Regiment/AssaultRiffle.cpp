@@ -1,9 +1,16 @@
 #include "AssaultRiffle.h"
 
-AssaultRiffle::AssaultRiffle(const float weight, const Condition cond, const unsigned int ammo)
+AssaultRiffle::AssaultRiffle()
 {
-	this->weight = weight;
-	this->condition = cond;
+	this->condition = Perfect;
+	ammoReserve = 0;
+	caliber = 5.56; //most common one
+}
+
+AssaultRiffle::AssaultRiffle(const float caliber, const unsigned int ammo)
+{
+	this->caliber = caliber;
+	this->condition = Perfect;
 	this->ammoReserve = ammo;
 }
 
@@ -12,16 +19,9 @@ unsigned int AssaultRiffle::getAmmoReserve() const
 	return ammoReserve;
 }
 
-unsigned int AssaultRiffle::restockAmmo()
+void AssaultRiffle::restockAmmo()
 {
-	if (ammoReserve == 0)
-	{
-		ammoReserve = MAX_AMMO_AR;
-	}
-	else
-	{
-		std::cout << "There is still some ammo left!";
-	}
+	ammoReserve = MAX_AMMO_AR;
 }
 
 Weapons* AssaultRiffle::clone() const

@@ -5,13 +5,13 @@
 class Weapons
 {
 protected:
-	float weight;
+	float caliber;
 	Condition condition;
 public:
-	float getWeight()const;
+	float getCaliber()const;
 	Condition getCondition()const;
 
 	void fix();
-	virtual unsigned int restockAmmo() = 0;
+	virtual void restockAmmo() = 0;
 	virtual Weapons* clone()const = 0;
 };

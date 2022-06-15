@@ -1,14 +1,15 @@
 #pragma once
 #include "Weapons.h"
 
-const unsigned int MAX_AMMO_SR;
+const unsigned int MAX_AMMO_SR = 1002;
 class SniperRiffle : public Weapons
 {
 	static unsigned int ammoReserve;
 public:
+	SniperRiffle();
 	SniperRiffle(const float, const unsigned int);
 	
 	const unsigned int getAmmoReserve()const;
-	unsigned int restockAmmo();
+	void restockAmmo() override;
 	Weapons* clone()const;
 };
