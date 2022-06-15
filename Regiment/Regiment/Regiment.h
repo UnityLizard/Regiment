@@ -32,7 +32,4 @@ public:
 	void restockAmmoP();
 	void restockAmmoSR();
 	void militaryTraning();
-
-	const Vector<Weapons*>& getWeapons()const;
-	const Vector<Machinery*>& getMachinery()const;
 };

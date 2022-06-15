@@ -11,7 +11,7 @@
 
 void Regiment::regimentStatus() const
 {
-	
+
 }
 
 void Regiment::soldiersStatus() const
@@ -27,17 +27,17 @@ void Regiment::machineryStatus() const
 void Regiment::weaponsStatus() const
 {
 	unsigned ARcount = 0;
-	unsigned ARpoor, ARgood, ARperfect = 0;
+	unsigned ARpoor = 0, ARgood = 0, ARperfect = 0;
 	unsigned MGcount = 0;
-	unsigned MGpoor, MGgood, MGperfect = 0;
+	unsigned MGpoor = 0, MGgood = 0, MGperfect = 0;
 	unsigned Pcount = 0;
-	unsigned Ppoor, Pgood, Pperfect = 0;
+	unsigned Ppoor = 0, Pgood = 0, Pperfect = 0;
 	unsigned SRcount = 0;
-	unsigned SRpoor, SRgood, SRperfect = 0;
+	unsigned SRpoor = 0, SRgood = 0, SRperfect = 0;
 
 	for (size_t i = 0; i < weapons.getSize(); i++)
 	{
-		if (weapons[i]->getType() == Type::AssaultRiffle)
+		if (weapons[i]->getType() == WeaponType::AssaultRiffle)
 		{
 			ARcount++;
 			if (weapons[i]->getCondition() == Condition::Perfect)
@@ -53,7 +53,7 @@ void Regiment::weaponsStatus() const
 				ARpoor++;
 			}
 		}
-		else if (weapons[i]->getType() == Type::MachineGun)
+		else if (weapons[i]->getType() == WeaponType::MachineGun)
 		{
 			MGcount++;
 			if (weapons[i]->getCondition() == Condition::Perfect)
@@ -69,7 +69,7 @@ void Regiment::weaponsStatus() const
 				MGpoor++;
 			}
 		}
-		else if (weapons[i]->getType() == Type::Pistol)
+		else if (weapons[i]->getType() == WeaponType::Pistol)
 		{
 			Pcount++;
 			if (weapons[i]->getCondition() == Condition::Perfect)
@@ -85,7 +85,7 @@ void Regiment::weaponsStatus() const
 				Ppoor++;
 			}
 		}
-		else if (weapons[i]->getType() == Type::SniperRiffle)
+		else if (weapons[i]->getType() == WeaponType::SniperRiffle)
 		{
 			SRcount++;
 			if (weapons[i]->getCondition() == Condition::Perfect)
@@ -129,7 +129,7 @@ void Regiment::addSoldier(Soldier*)
 {
 }
 
-oid Regiment::addMachinery(Machinery* obj)
+void Regiment::addMachinery(Machinery* obj)
 {
 	machinery.pushBack(obj);
 }
@@ -212,21 +212,21 @@ void Regiment::fixWeapons()
 	}
 }
 
-bool Regiment::restockFuel(size_t, unsigned)
+void Regiment::restockFuel()
 {
-	return false;
+	return;
 }
 
-bool Regiment::restockRounds(size_t, unsigned)
+void Regiment::restockRounds()
 {
-	return false;
+	return;
 }
 
 void Regiment::restockAmmoAR()
 {
 	for (size_t i = 0; i < weapons.getSize(); i++)
 	{
-		if (weapons[i]->getType() == Type::AssaultRiffle)
+		if (weapons[i]->getType() == WeaponType::AssaultRiffle)
 		{
 			weapons[i]->restockAmmo();
 		}
@@ -238,7 +238,7 @@ void Regiment::restockAmmoMG()
 {
 	for (size_t i = 0; i < weapons.getSize(); i++)
 	{
-		if (weapons[i]->getType() == Type::MachineGun)
+		if (weapons[i]->getType() == WeaponType::MachineGun)
 		{
 			weapons[i]->restockAmmo();
 		}
@@ -250,7 +250,7 @@ void Regiment::restockAmmoP()
 {
 	for (size_t i = 0; i < weapons.getSize(); i++)
 	{
-		if (weapons[i]->getType() == Type::Pistol)
+		if (weapons[i]->getType() == WeaponType::Pistol)
 		{
 			weapons[i]->restockAmmo();
 		}
@@ -262,7 +262,7 @@ void Regiment::restockAmmoSR()
 {
 	for (size_t i = 0; i < weapons.getSize(); i++)
 	{
-		if (weapons[i]->getType() == Type::SniperRiffle)
+		if (weapons[i]->getType() == WeaponType::SniperRiffle)
 		{
 			weapons[i]->restockAmmo();
 		}
@@ -272,14 +272,4 @@ void Regiment::restockAmmoSR()
 
 void Regiment::militaryTraning()
 {
-}
-
-const Vector<Weapons*>& Regiment::getWeapons() const
-{
-	return weapons;
-}
-
-const Vector<Machinery*>& Regiment::getMachinery() const
-{
-	return machinery;
 }

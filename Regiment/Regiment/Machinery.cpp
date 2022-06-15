@@ -19,18 +19,18 @@ unsigned Machinery::getWeight() const
 }
 void Machinery::fix()
 {
-	if (condition == Perfect)
+	if (condition == Condition::Perfect)
 	{
 		return;
 	}
-	if (condition == Good)
+	if (condition == Condition::Good)
 	{
-		condition = Perfect;
+		condition = Condition::Perfect;
 		return;
 	}
-	if (condition == Poor)
+	if (condition == Condition::Poor)
 	{
-		condition = Perfect;
+		condition = Condition::Perfect;
 		return;
 	}
 	return;

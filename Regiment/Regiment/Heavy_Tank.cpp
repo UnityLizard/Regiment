@@ -5,5 +5,5 @@ Machinery* Heavy_Tank::clone() const
 }
 unsigned Heavy_Tank::restockRounds() const
 {
-	
+	return 0;
 }

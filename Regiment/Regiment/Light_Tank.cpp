@@ -6,6 +6,6 @@ Machinery* Light_Tank::clone() const
 }
 unsigned Light_Tank::restockRounds()const
 {
-
+	return 0;
 }
 

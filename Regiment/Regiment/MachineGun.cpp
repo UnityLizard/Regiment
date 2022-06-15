@@ -2,7 +2,8 @@
 
 MachineGun::MachineGun()
 {
-	this->condition = Perfect;
+	this->condition = Condition::Perfect;
+	type = WeaponType::MachineGun;
 	ammoReserve = 0;
 	caliber = 12.7; //most common one
 }
@@ -10,18 +11,14 @@ MachineGun::MachineGun()
 MachineGun::MachineGun(const float caliber, const unsigned int ammo)
 {
 	this->caliber = caliber;
-	this->condition = Perfect;
+	this->condition = Condition::Perfect;
+	type = WeaponType::MachineGun;
 	this->ammoReserve = ammo;
 }
 
 const unsigned int MachineGun::getAmmoReserve() const
 {
 	return ammoReserve;
-}
-
-Weapons::Type MachineGun::getType() const
-{
-	return type;
 }
 
 void MachineGun::restockAmmo()

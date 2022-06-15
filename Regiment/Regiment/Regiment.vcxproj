@@ -168,6 +168,7 @@
     <ClInclude Include="Vector.hpp" />
     <ClInclude Include="Vehicle.h" />
     <ClInclude Include="Weapons.h" />
+    <ClInclude Include="WeaponType.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Anti_Tank.cpp" />
