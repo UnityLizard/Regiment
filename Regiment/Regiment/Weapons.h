@@ -1,6 +1,5 @@
 #pragma once
 #include "Condition.h"
-#include "WeaponType.h"
 #include <iostream>
 
 class Weapons
@@ -8,11 +7,17 @@ class Weapons
 protected:
 	float caliber;
 	Condition condition;
-	WeaponType type;
+	enum Type
+	{
+		AssaultRiffle,
+		MachineGun,
+		Pistol,
+		SniperRiffle
+	};
 public:
 	float getCaliber()const;
 	Condition getCondition()const;
-	WeaponType getType()const;
+	virtual Type getType()const = 0;
 
 	void fix();
 	virtual void restockAmmo() = 0;

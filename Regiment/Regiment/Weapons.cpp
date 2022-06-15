@@ -10,16 +10,11 @@ Condition Weapons::getCondition() const
 	return condition;
 }
 
-WeaponType Weapons::getType() const
-{
-	return type;
-}
-
 void Weapons::fix()
 {
-	if (condition != Condition::Perfect)
+	if (condition != Perfect)
 	{
-		condition = Condition::Perfect;
+		condition = Perfect;
 	}
 	else
 	{
