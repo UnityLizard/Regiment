@@ -2,13 +2,13 @@
 
 #include "Vector.hpp"
 #include "Soldier.h"
-//#include "Machinery.h"
+#include "Machinery.h"
 #include "Weapons.h"
 
 class Regiment
 {
 	Vector<Soldier*> soldiers;
-	//Vector<Machinery*> machinery;
+	Vector<Machinery*> machinery;
 	Vector<Weapons*> weapons;
 public:
 	void regimentStatus() const;
@@ -16,7 +16,7 @@ public:
 	void machineryStatus() const;
 	void weaponsStatus() const;
 	void addSoldier(Soldier*);
-	//void addMachinery(Machinery*);
+	void addMachinery(Machinery*);
 	void addWeapon(Weapons*);
 	bool removeSoldier(size_t);
 	bool removeMachinery(size_t);
@@ -25,8 +25,14 @@ public:
 	bool awardSoldier(size_t, Specializations);
 	void fixMachinery();
 	void fixWeapons();
-	bool restockFuel(size_t, unsigned);
-	bool restockRounds(size_t, unsigned);
-	bool restockAmmo(size_t, unsigned);
+	void restockFuel();
+	void restockRounds();
+	void restockAmmoAR();
+	void restockAmmoMG();
+	void restockAmmoP();
+	void restockAmmoSR();
 	void militaryTraning();
+
+	const Vector<Weapons*>& getWeapons()const;
+	const Vector<Machinery*>& getMachinery()const;
 };
