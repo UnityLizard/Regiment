@@ -19,6 +19,11 @@ const unsigned int Pistol::getAmmoReserve() const
 	return ammoReserve;
 }
 
+Weapons::Type Pistol::getType() const
+{
+	return type;
+}
+
 void Pistol::restockAmmo()
 {
 	

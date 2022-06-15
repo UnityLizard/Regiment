@@ -19,6 +19,11 @@ const unsigned int MachineGun::getAmmoReserve() const
 	return ammoReserve;
 }
 
+Weapons::Type MachineGun::getType() const
+{
+	return type;
+}
+
 void MachineGun::restockAmmo()
 {
 	ammoReserve = MAX_AMMO_MG;

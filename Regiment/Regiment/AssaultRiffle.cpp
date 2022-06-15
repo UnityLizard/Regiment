@@ -19,6 +19,11 @@ unsigned int AssaultRiffle::getAmmoReserve() const
 	return ammoReserve;
 }
 
+Weapons::Type AssaultRiffle::getType() const
+{
+	return type;
+}
+
 void AssaultRiffle::restockAmmo()
 {
 	ammoReserve = MAX_AMMO_AR;

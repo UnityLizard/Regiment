@@ -19,6 +19,11 @@ const unsigned int SniperRiffle::getAmmoReserve() const
 	return ammoReserve;
 }
 
+Weapons::Type SniperRiffle::getType() const
+{
+	return type;
+}
+
 void SniperRiffle::restockAmmo()
 {
 	ammoReserve = MAX_AMMO_SR;
