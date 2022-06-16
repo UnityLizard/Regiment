@@ -1,7 +1,7 @@
 #pragma once
-#include "Condition.h"
 #include<iostream>
-
+const unsigned ROUNDS_PREPARED = 20;
+enum Condition{Perfect,Poor,Good};
 class Machinery
 {
 protected:
@@ -10,8 +10,6 @@ protected:
 	unsigned weight;
 
 public:
-	Machinery(Condition Perfect, int x, int y);
-	
 	unsigned getcrewSize() const; 
 	Condition getCondition() const;
 	unsigned getWeight() const;

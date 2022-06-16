@@ -1,10 +1,5 @@
 #include"Machinery.h"
-Machinery::Machinery(Condition Perfect, int x, int y)
-{
-	condition = Perfect;
-	crewSize = x;
-	weight = y;
-}
+
 unsigned Machinery::getcrewSize() const
 {
 	return crewSize;
@@ -19,20 +14,9 @@ unsigned Machinery::getWeight() const
 }
 void Machinery::fix()
 {
-	if (condition == Condition::Perfect)
-	{
-		return;
-	}
-	if (condition == Condition::Good)
+	if (condition != Condition::Perfect)
 	{
 		condition = Condition::Perfect;
-		return;
 	}
-	if (condition == Condition::Poor)
-	{
-		condition = Condition::Perfect;
-		return;
-	}
-	return;
 }
 

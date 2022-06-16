@@ -9,4 +9,5 @@ protected:
 public:
 	bool restockFuel();
 	Machinery* clone() const override;
+	unsigned getFuelConsumation() const;
 };

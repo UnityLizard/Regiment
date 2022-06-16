@@ -1,6 +1,7 @@
 #include"Artillery.h"
 
-Machinery* Artillery::clone() const
+
+void Artillery::restockRounds() const
 {
-	return new Artillery(*this);
+	roundsReserved = ROUNDS_PREPARED;
 }

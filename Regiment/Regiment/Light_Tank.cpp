@@ -4,8 +4,13 @@ Machinery* Light_Tank::clone() const
 {
 	return new Light_Tank(*this);
 }
-unsigned Light_Tank::restockRounds()const
+void Light_Tank::restockRounds()const
 {
-	return 0;
+	roundsReserve = ROUNDS_PREPARED;
 }
-
+Light_Tank::Light_Tank()
+{
+	condition=Perfect;
+	fuelConsumption = 10;
+	top_speed = 30;
+}

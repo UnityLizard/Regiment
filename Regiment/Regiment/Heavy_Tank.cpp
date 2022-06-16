@@ -3,7 +3,13 @@ Machinery* Heavy_Tank::clone() const
 {
 	return new Heavy_Tank(*this);
 }
-unsigned Heavy_Tank::restockRounds() const
+void Heavy_Tank::restockRounds() const
 {
-	return 0;
+	roundsReserve = ROUNDS_PREPARED;
+}
+Heavy_Tank::Heavy_Tank()
+{
+	condition=Perfect;
+	fuelConsumption = 20;
+	top_speed = 20;
 }

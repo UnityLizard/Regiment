@@ -11,3 +11,7 @@ bool Vehicle::restockFuel()
 	}
 	return true;
 }
+unsigned Vehicle::getFuelConsumation() const
+{
+	return fuelConsumption;
+}

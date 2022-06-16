@@ -6,7 +6,7 @@ class Mortar: public Artillery
 protected:
 	static unsigned roundsReserved;
 public:
-	unsigned restockRounds() override;
+	void restockRounds()const override;
 	Machinery* clone() const override;
 
 };

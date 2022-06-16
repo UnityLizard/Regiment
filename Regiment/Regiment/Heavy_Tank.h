@@ -6,6 +6,7 @@ class Heavy_Tank:public Tank
 protected:
 	static unsigned roundsReserve;
 public:
-	unsigned restockRounds() const override;
+	Heavy_Tank();
+	void restockRounds() const override;
 	Machinery* clone() const override;
 };

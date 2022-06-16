@@ -1,9 +1,5 @@
 #include"Tank.h"
-Machinery* Tank::clone() const
+void Tank::restockRounds() const
 {
-	return new Tank(*this);
-}
-unsigned Tank::restockRounds() const
-{
-	return 0;
+	roundsReserved = ROUNDS_PREPARED;
 }

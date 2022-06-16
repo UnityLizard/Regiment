@@ -2,6 +2,7 @@
 #include"Vehicle.h"
 class Tank :public Vehicle
 {
-	virtual unsigned restockRounds() const ;
-	Machinery* clone() const override;
+	static unsigned roundsReserved;
+public:
+	virtual void restockRounds() const=0 ;
 };

@@ -2,7 +2,7 @@
 #include"Machinery.h"
 class Artillery :public Machinery
 {
+	static unsigned roundsReserved;
 public:
-	virtual unsigned restockRounds();
-	Machinery* clone() const override;
+	virtual void restockRounds() const=0;
 };
