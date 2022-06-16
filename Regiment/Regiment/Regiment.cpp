@@ -21,11 +21,142 @@ void Regiment::soldiersStatus() const
 
 void Regiment::machineryStatus() const
 {
-	//fixes must be made on Machinery classes
+	/* 
+	HT- Heavy tank
+	LT- Light tank
+	J- Jeep
+	AT- Anti tank
+	M- Mortar
+	*/  
+	unsigned HTcount = 0;
+	unsigned HTpoor = 0, HTgood = 0, HTperfect = 0;
+	unsigned LTcount = 0;
+	unsigned LTpoor = 0, LTgood = 0, LTperfect = 0;
+	unsigned Jcount = 0;
+	unsigned Jpoor = 0, Jgood = 0, Jperfect = 0;
+	unsigned ATcount = 0;
+	unsigned ATpoor = 0, ATgood = 0, ATperfect = 0;
+	unsigned Mcount = 0;
+	unsigned Mpoor = 0, Mgood = 0, Mperfect = 0;
+
+	for (size_t i = 0; i < machinery.getSize(); i++)
+	{
+		if (machinery[i]->getType() == MachineryType::Heavy_Tank)
+		{
+			ARcount++;
+			if (machinery[i]->getCondition() == Condition::Perfect)
+			{
+				HTperfect++;
+			}
+			else if (machinery[i]->getCondition() == Condition::Good)
+			{
+				HTgood++;
+			}
+			else if (machinery[i]->getCondition() == Condition::Poor)
+			{
+				HTpoor++;
+			}
+		}
+		else if (machinery[i]->getType() == MachineryType::Light_Tank)
+		{
+			MGcount++;
+			if (machinery[i]->getCondition() == Condition::Perfect)
+			{
+				LTperfect++;
+			}
+			else if (machinery[i]->getCondition() == Condition::Good)
+			{
+				LTgood++;
+			}
+			else if (machinery[i]->getCondition() == Condition::Poor)
+			{
+				LTpoor++;
+			}
+		}
+		else if (machinery[i]->getType() == MachineryType::Jeep)
+		{
+			MGcount++;
+			if (machinery[i]->getCondition() == Condition::Perfect)
+			{
+				Jperfect++;
+			}
+			else if (machinery[i]->getCondition() == Condition::Good)
+			{
+				Jgood++;
+			}
+			else if (machinery[i]->getCondition() == Condition::Poor)
+			{
+				Jpoor++;
+			}
+		}
+		else if (machinery[i]->getType() == MachineryType::Anti_Tank)
+		{
+			MGcount++;
+			if (machinery[i]->getCondition() == Condition::Perfect)
+			{
+				ATperfect++;
+			}
+			else if (machinery[i]->getCondition() == Condition::Good)
+			{
+				ATgood++;
+			}
+			else if (machinery[i]->getCondition() == Condition::Poor)
+			{
+				ATpoor++;
+			}
+		}
+		else if (machinery[i]->getType() == MachineryType::Mortar)
+		{
+			MGcount++;
+			if (machinery[i]->getCondition() == Condition::Perfect)
+			{
+				Mperfect++;
+			}
+			else if (machinery[i]->getCondition() == Condition::Good)
+			{
+				Mgood++;
+			}
+			else if (machinery[i]->getCondition() == Condition::Poor)
+			{
+				Mpoor++;
+			}
+		}
+	}
+	std::cout << "Machinery status: " << std::endl;
+	std::cout << "Heavy Tanks: " << HTcount << std::endl;
+	std::cout << "HT conditions: " << std::endl;
+	std::cout << "Perfect- " << HTperfect << std::endl << "Good- " << HTgood << std::endl;
+	std::cout << "Poor- " << HTpoor << std::endl << std::endl;
+
+	std::cout << "Light Tanks: " << LTcount << std::endl;
+	std::cout << "LT conditions: " << std::endl;
+	std::cout << "Perfect- " << LTperfect << std::endl << "Good- " << LTgood << std::endl;
+	std::cout << "Poor- " << LTpoor << std::endl << std::endl;
+
+	std::cout << "Jeeps: " << Jcount << std::endl;
+	std::cout << "Jeep conditions: " << std::endl;
+	std::cout << "Perfect- " << Jperfect << std::endl << "Good- " << Jgood << std::endl;
+	std::cout << "Poor- " << Jpoor << std::endl << std::endl;
+
+	std::cout << "Anti Tanks: " << ATcount << std::endl;
+	std::cout << "AT conditions: " << std::endl;
+	std::cout << "Perfect- " << ATperfect << std::endl << "Good- " << ATgood << std::endl;
+	std::cout << "Poor- " << ATpoor << std::endl << std::endl;
+
+	std::cout << "Mortars: " << Mcount << std::endl;
+	std::cout << "Mortar conditions: " << std::endl;
+	std::cout << "Perfect- " << Mperfect << std::endl << "Good- " << Mgood << std::endl;
+	std::cout << "Poor- " << Mpoor << std::endl << std::endl;
 }
 
 void Regiment::weaponsStatus() const
 {
+	/* 
+	AR- Assault Riffle
+	MG- Machine Gun
+	P- Pistol
+	SR- Sniper Riffle
+	*/  
 	unsigned ARcount = 0;
 	unsigned ARpoor = 0, ARgood = 0, ARperfect = 0;
 	unsigned MGcount = 0;
@@ -114,7 +245,7 @@ void Regiment::weaponsStatus() const
 	std::cout << "Poor- " << MGpoor << std::endl << std::endl;
 
 	std::cout << "Pistols: " << Pcount << std::endl;
-	std::cout << "P conditions: " << std::endl;
+	std::cout << "Pistol conditions: " << std::endl;
 	std::cout << "Perfect- " << Pperfect << std::endl << "Good- " << Pgood << std::endl;
 	std::cout << "Poor- " << Ppoor << std::endl << std::endl;
 
@@ -214,12 +345,26 @@ void Regiment::fixWeapons()
 
 void Regiment::restockFuel()
 {
-	return;
+	for (size_t i = 0; i < machinery.getSize(); i++)
+	{
+		if (machinery[i]->getType() == MachineryType::Vehicle)
+		{
+			machinery[i]->restockFuel();
+		}
+		break;
+	}
 }
 
 void Regiment::restockRounds()
 {
-	return;
+	for (size_t i = 0; i < machinery.getSize(); i++)
+	{
+		if (machinery[i]->getType() == MachineryType::Artillery)
+		{
+			machinery[i]->restockRounds();
+		}
+		break;
+	}
 }
 
 void Regiment::restockAmmoAR()
