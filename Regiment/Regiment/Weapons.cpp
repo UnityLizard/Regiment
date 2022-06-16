@@ -1,23 +1,29 @@
 #include "Weapons.h"
 
-float Weapons::getCaliber() const
+const float Weapons::getWeight() const
 {
-	return this->caliber;
+	return weight;
 }
 
-Condition Weapons::getCondition() const
+const float Weapons::getCaliber() const
+{
+	return caliber;
+}
+
+const WeaponType Weapons::getType() const
+{
+	return type;
+}
+
+const Condition Weapons::getCondition() const
 {
 	return condition;
 }
 
 void Weapons::fix()
 {
-	if (condition != Perfect)
+	if (condition != Condition::Perfect)
 	{
-		condition = Perfect;
-	}
-	else
-	{
-		std::cout << "Weapon does not need fixing - it is in perfect condition!" << std::endl;
+		condition = Condition::Perfect;
 	}
 }

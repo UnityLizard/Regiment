@@ -2,18 +2,10 @@
 
 AssaultRiffle::AssaultRiffle()
 {
-	this->condition = Condition::Perfect;
+	weight = 2.92;
+	caliber = 5.56;
 	type = WeaponType::AssaultRiffle;
-	ammoReserve = 0;
-	caliber = 5.56; //most common one
-}
-
-AssaultRiffle::AssaultRiffle(const float caliber, const unsigned int ammo)
-{
-	this->caliber = caliber;
-	this->condition = Condition::Perfect;
-	type = WeaponType::AssaultRiffle;
-	this->ammoReserve = ammo;
+	condition = Condition::Perfect;
 }
 
 const unsigned int AssaultRiffle::getAmmoReserve() const

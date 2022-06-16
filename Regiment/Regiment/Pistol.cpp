@@ -2,18 +2,10 @@
 
 Pistol::Pistol()
 {
-	this->condition = Condition::Perfect;
+	weight = 0.68;
+	caliber = 9;
 	type = WeaponType::Pistol;
-	ammoReserve = 0;
-	caliber = 9; //most common one
-}
-
-Pistol::Pistol(const float caliber, const unsigned int ammo)
-{
-	this->caliber = caliber;
-	this->condition = Condition::Perfect;
-	type = WeaponType::Pistol;
-	this->ammoReserve = ammo;
+	condition = Condition::Perfect;
 }
 
 const unsigned int Pistol::getAmmoReserve() const
@@ -23,7 +15,6 @@ const unsigned int Pistol::getAmmoReserve() const
 
 void Pistol::restockAmmo()
 {
-	
 	ammoReserve = MAX_AMMO_P;
 }
 

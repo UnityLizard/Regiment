@@ -2,18 +2,10 @@
 
 MachineGun::MachineGun()
 {
-	this->condition = Condition::Perfect;
+	weight = 10.5;
+	caliber = 12.7;
 	type = WeaponType::MachineGun;
-	ammoReserve = 0;
-	caliber = 12.7; //most common one
-}
-
-MachineGun::MachineGun(const float caliber, const unsigned int ammo)
-{
-	this->caliber = caliber;
-	this->condition = Condition::Perfect;
-	type = WeaponType::MachineGun;
-	this->ammoReserve = ammo;
+	condition = Condition::Perfect;
 }
 
 const unsigned int MachineGun::getAmmoReserve() const

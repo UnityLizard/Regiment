@@ -2,18 +2,10 @@
 
 SniperRiffle::SniperRiffle()
 {
-	this->condition = Condition::Perfect;
+	weight = 5.4;
+	caliber = 7.62;
 	type = WeaponType::SniperRiffle;
-	ammoReserve = 0;
-	caliber = 7.62; //most common one
-}
-
-SniperRiffle::SniperRiffle(const float weight, const unsigned int ammo)
-{
-	this->caliber = caliber;
-	this->condition = Condition::Perfect;
-	type = WeaponType::SniperRiffle;
-	this->ammoReserve = ammo;
+	condition = Condition::Perfect;
 }
 
 const unsigned int SniperRiffle::getAmmoReserve() const

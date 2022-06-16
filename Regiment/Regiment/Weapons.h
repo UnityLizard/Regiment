@@ -1,25 +1,23 @@
 #pragma once
+
 #include "Condition.h"
-#include <iostream>
+#include "WeaponType.h"
 
 class Weapons
 {
 protected:
+	float weight;
 	float caliber;
+	WeaponType type;
 	Condition condition;
-	enum Type
-	{
-		AssaultRiffle,
-		MachineGun,
-		Pistol,
-		SniperRiffle
-	};
 public:
-	float getCaliber()const;
-	Condition getCondition()const;
-	virtual Type getType()const = 0;
+	const float getWeight() const;
+	const float getCaliber() const;
+	const WeaponType getType() const;
+	const Condition getCondition() const;
+
+	virtual Weapons* clone() const = 0;
 
 	void fix();
 	virtual void restockAmmo() = 0;
-	virtual Weapons* clone()const = 0;
 };
