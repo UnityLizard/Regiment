@@ -5,15 +5,11 @@ General::General(const Soldier* other)
 	name = other->getName();
 	age = other->getAge();
 	active = other->isActive();
+	rank = Rank::General;
 	specialization = other->getSpecialization();
 	medalsCount = other->getMedalsCount();
 	for (size_t i = 0; i < medalsCount; i++)
 		medals[i] = other->getMedal(i);
-}
-
-const char* General::getRank() const
-{
-	return "GEN";
 }
 
 Soldier* General::clone() const
@@ -23,13 +19,17 @@ Soldier* General::clone() const
 
 bool General::command(const Soldier* soldier) const
 {
-	if (strcmp(soldier->getRank(), "GEN") == 0)
+	if (soldier->getRank() >= rank)
 		return false;
-	std::cout << "GEN " << name << " is giving " << soldier->getRank() << " " << soldier->getName() << " an order." << std::endl;
+	rankDisplay();
+	std::cout << " " << name << " is giving ";
+	soldier->rankDisplay();
+	std::cout << " " << soldier->getName() << " an order." << std::endl;
 	return true;
 }
 
 void General::writeReport() const
 {
-	std::cout << "GEN " << name << " is writing a report." << std::endl;
+	rankDisplay();
+	std::cout << " " << name << " is writing a report." << std::endl;
 }

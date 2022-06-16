@@ -5,15 +5,11 @@ Corporal::Corporal(const Soldier* other)
 	name = other->getName();
 	age = other->getAge();
 	active = other->isActive();
+	rank = Rank::Corporal;
 	specialization = other->getSpecialization();
 	medalsCount = other->getMedalsCount();
 	for (size_t i = 0; i < medalsCount; i++)
 		medals[i] = other->getMedal(i);
-}
-
-const char* Corporal::getRank() const
-{
-	return "CPL";
 }
 
 Soldier* Corporal::clone() const
@@ -23,5 +19,6 @@ Soldier* Corporal::clone() const
 
 void Corporal::patrol() const
 {
-	std::cout << "CPL " << name << " is patrolling." << std::endl << std::endl;
+	rankDisplay();
+	std::cout << " " << name << " is patrolling." << std::endl << std::endl;
 }

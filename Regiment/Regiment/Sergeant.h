@@ -5,9 +5,7 @@
 class Sergeant : public Soldier
 {
 public:
-	Sergeant(const Soldier*, const Specializations);
-
-	const char* getRank() const override;
+	Sergeant(const Soldier*, const Specialization);
 
 	Soldier* clone() const override;
 

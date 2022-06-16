@@ -66,12 +66,6 @@
     <ClInclude Include="Soldier.h">
       <Filter>Header Files\Soldiers</Filter>
     </ClInclude>
-    <ClInclude Include="Specializations.h">
-      <Filter>Header Files\Enums</Filter>
-    </ClInclude>
-    <ClInclude Include="Medals.h">
-      <Filter>Header Files\Enums</Filter>
-    </ClInclude>
     <ClInclude Include="Vector.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -124,6 +118,15 @@
       <Filter>Header Files\Weapons</Filter>
     </ClInclude>
     <ClInclude Include="WeaponType.h">
+      <Filter>Header Files\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="Rank.h">
+      <Filter>Header Files\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="Specialization.h">
+      <Filter>Header Files\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="Medal.h">
       <Filter>Header Files\Enums</Filter>
     </ClInclude>
   </ItemGroup>

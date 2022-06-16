@@ -1,6 +1,6 @@
 #pragma once
 
-enum class Specializations
+enum class Specialization
 {
 	Assault,
 	Medic,

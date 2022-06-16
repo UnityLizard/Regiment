@@ -7,8 +7,6 @@ class Private : public Soldier
 {
 public:
 	Private(const String&, const unsigned);
-	
-	const char* getRank() const override;
 
 	Soldier* clone() const override;
 

@@ -2,7 +2,7 @@
 
 const size_t ALL_MEDALS = 6;
 
-enum class Medals
+enum class Medal
 {
 	Medal_of_Honor,
 	Distinguished_Service_Medal,

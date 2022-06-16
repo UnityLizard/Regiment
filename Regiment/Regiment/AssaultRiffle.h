@@ -12,5 +12,6 @@ public:
 	const unsigned int getAmmoReserve()const;
 	void restockAmmo() override;
 	Weapons* clone() const override;
-
 };
+
+unsigned AssaultRiffle::ammoReserve = 0;

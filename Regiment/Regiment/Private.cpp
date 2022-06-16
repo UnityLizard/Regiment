@@ -5,13 +5,9 @@ Private::Private(const String& name, const unsigned age)
 	this->name = name;
 	this->age = age;
 	active = true;
-	specialization = Specializations::Assault;
+	rank = Rank::Private;
+	specialization = Specialization::Assault;
 	medalsCount = 0;
-}
-
-const char* Private::getRank() const
-{
-	return "PVT";
 }
 
 Soldier* Private::clone() const
@@ -21,5 +17,6 @@ Soldier* Private::clone() const
 
 void Private::patrol() const
 {
-	std::cout << "PVT " << name << " is patrolling." << std::endl;
+	rankDisplay();
+	std::cout << " " << name << " is patrolling." << std::endl;
 }
