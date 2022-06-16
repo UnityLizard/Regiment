@@ -7,6 +7,7 @@ Anti_Tank::Anti_Tank()
 	crewSize = 2;
 	type = MachineryType::AntiTank;
 	condition = Condition::Perfect;
+	weight = 800;
 }
 
 const unsigned Anti_Tank::getRoundsReserve() const

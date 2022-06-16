@@ -22,12 +22,22 @@
 
 void Regiment::regimentStatus() const
 {
-	return;
+	soldiersStatus();
+	std::cout << std::endl;
+	machineryStatus();
+	std::cout << std::endl;
+	weaponsStatus();
+	std::cout << std::endl;
 }
 
 void Regiment::soldiersStatus() const
 {
-	return;
+	for (size_t i = 0; i < soldiers.getSize(); i++)
+	{
+		std::cout << i << ". ";
+		soldiers[i]->rankDisplay();
+		std::cout << " " << soldiers[i]->getName() << std::endl;
+	}
 }
 
 void Regiment::machineryStatus() const
@@ -491,24 +501,119 @@ bool Regiment::removeWeapon(size_t index)
 	return true;
 }
 
-bool Regiment::soldierRankFilter(const Rank)
+bool Regiment::soldierRankFilter(const Rank rank)
 {
-	return false;
+	if (soldiers.getSize() == 0)
+		return false;
+	
+	size_t counter = 0;
+
+	for (size_t i = 0; i < soldiers.getSize(); i++)
+		if (soldiers[i]->getRank() == rank)
+		{
+			std::cout << counter << ". ";
+			soldiers[i]->rankDisplay();
+			std::cout << " " << soldiers[i]->getName() << std::endl;
+		}
+
+	return true;
 }
 
 bool Regiment::discussTactics()
 {
-	return false;
+	if (soldiers.getSize() == 0)
+		return false;
+
+	size_t counter = 0;
+
+	for (size_t i = 0; i < soldiers.getSize(); i++)
+		if (soldiers[i]->getRank() >= Rank::Colonel)
+		{
+			if (counter)
+				std::cout << ", ";
+			soldiers[i]->rankDisplay();
+			std::cout << " " << soldiers[i]->getName();
+		}
+
+	std::cout << " are discussing military tactics." << std::endl;
+
+	return true;
 }
 
-bool Regiment::promoteSoldier(size_t)
+bool Regiment::promoteSoldier(size_t index)
 {
-	return false;
+	if (index >= soldiers.getSize())
+		return false;
+
+	Soldier* currentSoldier = soldiers.popAt(index);
+	Soldier* promotedSoldier = nullptr;
+
+	switch (currentSoldier->getRank())
+	{
+	case Rank::Private:
+		promotedSoldier = new Corporal(currentSoldier);
+		break;
+	case Rank::Corporal:
+		break;
+	case Rank::Sergeant:
+		promotedSoldier = new Lieutenant(currentSoldier);
+		break;
+	case Rank::Lieutenant:
+		promotedSoldier = new Captain(currentSoldier);
+		break;
+	case Rank::Captain:
+		promotedSoldier = new Major(currentSoldier);
+		break;
+	case Rank::Major:
+		promotedSoldier = new Colonel(currentSoldier);
+		break;
+	case Rank::Colonel:
+		promotedSoldier = new General(currentSoldier);
+		break;
+	case Rank::General:
+		break;
+	default:
+		break;
+	}
+
+	if (promotedSoldier == nullptr)
+	{
+		soldiers.pushAt(currentSoldier, index);
+
+		return false;
+	}
+
+	delete currentSoldier;
+	soldiers.pushAt(promotedSoldier, index);
+
+	return true;
 }
 
-bool Regiment::awardSoldier(const size_t, const Medal)
+bool Regiment::promoteSoldier(const size_t index, const Specialization spec)
 {
-	return false;
+	if (index >= soldiers.getSize())
+		return false;
+
+	if (soldiers[index]->getRank() != Rank::Colonel)
+		return false;
+
+	Soldier* currentSoldier = soldiers.popAt(index);
+	Soldier* promotedSoldier = new Sergeant(currentSoldier, spec);
+
+	delete currentSoldier;
+	soldiers.pushAt(promotedSoldier, index);
+
+	return true;
+}
+
+bool Regiment::awardSoldier(const size_t index, const Medal medal)
+{
+	if (index >= soldiers.getSize())
+		return false;
+	
+	soldiers[index]->recieveMedal(medal);
+
+	return true;
 }
 
 bool Regiment::militaryTraning()

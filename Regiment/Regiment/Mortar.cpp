@@ -7,6 +7,7 @@ Mortar::Mortar()
 	crewSize = 2;
 	type = MachineryType::Mortar;
 	condition = Condition::Perfect;
+	weight = 41.3;
 }
 
 const unsigned Mortar::getRoundsReserve() const

@@ -18,6 +18,7 @@ public:
 	bool addPrivate(const String&, const unsigned);
 	bool soldierInfo(const size_t);
 	bool promoteSoldier(const size_t);
+	bool promoteSoldier(const size_t, const Specialization);
 	bool awardSoldier(const size_t, const Medal);
 	bool removeSoldier(const size_t);
 	bool addMortar();
