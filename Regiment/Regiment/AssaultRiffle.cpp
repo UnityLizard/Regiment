@@ -1,5 +1,8 @@
 #include "AssaultRiffle.h"
 
+const unsigned int MAX_AMMO_AR = 21000;
+unsigned AssaultRiffle::ammoReserve = 0;
+
 AssaultRiffle::AssaultRiffle()
 {
 	weight = 2.92;

@@ -178,6 +178,8 @@ bool Vector<T>::empty() const {
 
 template <typename T>
 void Vector<T>::clear() {
+	for (size_t i = 0; i < size; i++)
+		delete data[i];
 	delete[] data;
 	capacity = DEFAULT_CAPACITY;
 	data = new T[capacity];

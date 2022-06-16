@@ -4,6 +4,6 @@ enum class WeaponType
 {
 	AssaultRiffle,
 	MachineGun,
-	Pistol,
-	SniperRiffle
+	SniperRiffle,
+	Pistol
 };

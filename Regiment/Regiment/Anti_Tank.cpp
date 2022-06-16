@@ -1,4 +1,6 @@
-#include"Anti_Tank.h"
+#include "Anti_Tank.h"
+
+unsigned Anti_Tank::roundsReserve = 0;
 
 Anti_Tank::Anti_Tank()
 {
@@ -17,7 +19,7 @@ Machinery* Anti_Tank::clone() const
 	return new Anti_Tank(*this);
 }
 
-void Anti_Tank::restockRounds() const
+void Anti_Tank::restockRounds()
 {
 	roundsReserve = MAX_ANTI_TANK_ROUNDS;
 }

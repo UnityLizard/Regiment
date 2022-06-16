@@ -174,6 +174,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Anti_Tank.cpp" />
+    <ClCompile Include="Artillery.cpp" />
     <ClCompile Include="AssaultRiffle.cpp" />
     <ClCompile Include="Captain.cpp" />
     <ClCompile Include="Colonel.cpp" />
@@ -195,6 +196,7 @@
     <ClCompile Include="Soldier.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="String.cpp" />
+    <ClCompile Include="Tank.cpp" />
     <ClCompile Include="Vehicle.cpp" />
     <ClCompile Include="Weapons.cpp" />
   </ItemGroup>

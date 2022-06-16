@@ -1,8 +1,6 @@
 #pragma once
 #include "Weapons.h"
 
-const unsigned int MAX_AMMO_SR = 1002;
-
 class SniperRiffle : public Weapons
 {
 	static unsigned int ammoReserve;
@@ -15,5 +13,3 @@ public:
 
 	void restockAmmo() override;
 };
-
-unsigned SniperRiffle::ammoReserve = 0;

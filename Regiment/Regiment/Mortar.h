@@ -1,6 +1,6 @@
 #pragma once
 
-#include"Artillery.h"
+#include "Artillery.h"
 
 const unsigned MAX_MORTAR_ROUNDS = 200;
 
@@ -14,8 +14,5 @@ public:
 	
 	Machinery* clone() const override;
 
-	void restockRounds() const override;
-
+	static void restockRounds();
 };
-
-unsigned Mortar::roundsReserve = 0;

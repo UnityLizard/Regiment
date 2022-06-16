@@ -1,9 +1,11 @@
 #pragma once
 
-#include"Machinery.h"
+#include "Machinery.h"
 
 class Artillery : public Machinery
 {
+protected:
+	float weight;
 public:
-	virtual void restockRounds() const = 0;
+	const float getWeight() const;
 };

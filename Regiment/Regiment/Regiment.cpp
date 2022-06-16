@@ -9,14 +9,25 @@
 #include "Colonel.h"
 #include "General.h"
 
+#include "Mortar.h"
+#include "Anti_Tank.h"
+#include "Jeep.h"
+#include "Light_Tank.h"
+#include "Heavy_Tank.h"
+
+#include "AssaultRiffle.h"
+#include "MachineGun.h"
+#include "SniperRiffle.h"
+#include "Pistol.h"
+
 void Regiment::regimentStatus() const
 {
-
+	return;
 }
 
 void Regiment::soldiersStatus() const
 {
-
+	return;
 }
 
 void Regiment::machineryStatus() const
@@ -41,9 +52,9 @@ void Regiment::machineryStatus() const
 
 	for (size_t i = 0; i < machinery.getSize(); i++)
 	{
-		if (machinery[i]->getType() == MachineryType::Heavy_Tank)
+		if (machinery[i]->getType() == MachineryType::HeavyTank)
 		{
-			ARcount++;
+			HTcount++;
 			if (machinery[i]->getCondition() == Condition::Perfect)
 			{
 				HTperfect++;
@@ -57,9 +68,9 @@ void Regiment::machineryStatus() const
 				HTpoor++;
 			}
 		}
-		else if (machinery[i]->getType() == MachineryType::Light_Tank)
+		else if (machinery[i]->getType() == MachineryType::LightTank)
 		{
-			MGcount++;
+			LTcount++;
 			if (machinery[i]->getCondition() == Condition::Perfect)
 			{
 				LTperfect++;
@@ -75,7 +86,7 @@ void Regiment::machineryStatus() const
 		}
 		else if (machinery[i]->getType() == MachineryType::Jeep)
 		{
-			MGcount++;
+			Jcount++;
 			if (machinery[i]->getCondition() == Condition::Perfect)
 			{
 				Jperfect++;
@@ -89,9 +100,9 @@ void Regiment::machineryStatus() const
 				Jpoor++;
 			}
 		}
-		else if (machinery[i]->getType() == MachineryType::Anti_Tank)
+		else if (machinery[i]->getType() == MachineryType::AntiTank)
 		{
-			MGcount++;
+			ATcount++;
 			if (machinery[i]->getCondition() == Condition::Perfect)
 			{
 				ATperfect++;
@@ -107,7 +118,7 @@ void Regiment::machineryStatus() const
 		}
 		else if (machinery[i]->getType() == MachineryType::Mortar)
 		{
-			MGcount++;
+			Mcount++;
 			if (machinery[i]->getCondition() == Condition::Perfect)
 			{
 				Mperfect++;
@@ -256,8 +267,258 @@ void Regiment::weaponsStatus() const
 
 }
 
-void Regiment::addSoldier(Soldier*)
+bool Regiment::addPrivate(const String& name, const unsigned age)
 {
+	if (name.c_str() == nullptr || age < 18 || age >= 80)
+		return false;
+	
+	Private* temp = new Private(name, age);
+	addSoldier(temp);
+	temp = nullptr;
+
+	return true;
+}
+
+bool Regiment::soldierInfo(const size_t index)
+{
+	if (index >= soldiers.getSize())
+		return false;
+	
+	soldiers[index]->soldierInfo();
+	return true;
+}
+
+bool Regiment::removeSoldier(size_t index)
+{
+	if (index >= soldiers.getSize())
+		return false;
+
+	Soldier* temp = soldiers.popAt(index);
+	delete temp;
+	
+	return true;
+}
+
+bool Regiment::addMortar()
+{
+	Mortar* temp = new Mortar();
+	addMachinery(temp);
+	temp = nullptr;
+
+	return true;
+}
+
+bool Regiment::addAntiTank()
+{
+	Anti_Tank* temp = new Anti_Tank();
+	addMachinery(temp);
+	temp = nullptr;
+
+	return true;
+}
+
+bool Regiment::addJeep()
+{
+	Jeep* temp = new Jeep();
+	addMachinery(temp);
+	temp = nullptr;
+
+	return true;
+}
+
+bool Regiment::addLightTank()
+{
+	Light_Tank* temp = new Light_Tank();
+	addMachinery(temp);
+	temp = nullptr;
+
+	return true;
+}
+
+bool Regiment::addHeavyTank()
+{
+	Heavy_Tank* temp = new Heavy_Tank();
+	addMachinery(temp);
+	temp = nullptr;
+
+	return true;
+}
+
+bool Regiment::fixMachinery()
+{
+	if (machinery.getSize() == 0)
+		return false;
+	
+	for (size_t i = 0; i < machinery.getSize(); i++)
+	{
+		machinery[i]->fix();
+	}
+
+	return true;
+}
+
+bool Regiment::restockFuel()
+{
+	for (size_t i = 0; i < machinery.getSize(); i++)
+	{
+		if (machinery[i]->getType() == MachineryType::Jeep
+			|| machinery[i]->getType() == MachineryType::LightTank
+			|| machinery[i]->getType() == MachineryType::HeavyTank)
+		{
+			Vehicle::restockFuel();
+		}
+		return true;
+	}
+
+	return false;
+}
+
+bool Regiment::restockRounds(const MachineryType type)
+{
+	if (type == MachineryType::Jeep)
+		return false;
+	
+	for (size_t i = 0; i < machinery.getSize(); i++)
+	{
+		if (machinery[i]->getType() == type)
+		{
+			switch (type)
+			{
+			case MachineryType::Mortar:
+				Mortar::restockRounds();
+				break;
+			case MachineryType::AntiTank:
+				Anti_Tank::restockRounds();
+				break;
+			case MachineryType::LightTank:
+				Light_Tank::restockRounds();
+				break;
+			case MachineryType::HeavyTank:
+				Heavy_Tank::restockRounds();
+				break;
+			default:
+				break;
+			}
+		}
+		return true;
+	}
+
+	return false;
+}
+
+bool Regiment::removeMachinery(size_t index)
+{
+	if (index >= machinery.getSize())
+		return false;
+
+	Machinery* temp = machinery.popAt(index);
+	delete temp;
+
+	return true;
+}
+
+bool Regiment::addAssaultRiffle()
+{
+	AssaultRiffle* temp = new AssaultRiffle();
+	addWeapon(temp);
+	temp = nullptr;
+
+	return true;
+}
+
+bool Regiment::addMachineGun()
+{
+	MachineGun* temp = new MachineGun();
+	addWeapon(temp);
+	temp = nullptr;
+
+	return true;
+}
+
+bool Regiment::addSniperRiffle()
+{
+	SniperRiffle* temp = new SniperRiffle();
+	addWeapon(temp);
+	temp = nullptr;
+
+	return true;
+}
+
+bool Regiment::addPistol()
+{
+	Pistol* temp = new Pistol();
+	addWeapon(temp);
+	temp = nullptr;
+
+	return true;
+}
+
+bool Regiment::fixWeapons()
+{
+	if (weapons.getSize() == 0)
+		return false;
+
+	for (size_t i = 0; i < weapons.getSize(); i++)
+	{
+		weapons[i]->fix();
+	}
+
+	return true;
+}
+
+bool Regiment::restockAmmo(const WeaponType type)
+{
+	for (size_t i = 0; i < weapons.getSize(); i++)
+	{
+		if (weapons[i]->getType() == type)
+		{
+			weapons[i]->restockAmmo();
+		}
+		return true;
+	}
+
+	return false;
+}
+
+bool Regiment::removeWeapon(size_t index)
+{
+	if (index >= weapons.getSize())
+		return false;
+
+	Weapons* temp = weapons.popAt(index);
+	delete temp;
+
+	return true;
+}
+
+bool Regiment::soldierRankFilter(const Rank)
+{
+	return false;
+}
+
+bool Regiment::discussTactics()
+{
+	return false;
+}
+
+bool Regiment::promoteSoldier(size_t)
+{
+	return false;
+}
+
+bool Regiment::awardSoldier(const size_t, const Medal)
+{
+	return false;
+}
+
+bool Regiment::militaryTraning()
+{
+	return false;
+}
+
+void Regiment::addSoldier(Soldier* obj)
+{
+	soldiers.pushBack(obj);
 }
 
 void Regiment::addMachinery(Machinery* obj)
@@ -268,153 +529,4 @@ void Regiment::addMachinery(Machinery* obj)
 void Regiment::addWeapon(Weapons* obj)
 {
 	weapons.pushBack(obj);
-
-}
-
-bool Regiment::removeSoldier(size_t)
-{
-	return false;
-}
-
-bool Regiment::removeMachinery(size_t index)
-{
-	bool doesExist = 0;
-	for (size_t i = 0; i < weapons.getSize(); i++)
-	{
-		if (i == index)
-		{
-			doesExist = 1;
-			break;
-		}
-	}
-
-	if (!doesExist)
-	{
-		throw "This machinery does not exist!";
-		return false;
-	}
-	machinery.popAt(index);
-}
-
-bool Regiment::removeWeapon(size_t index)
-{
-	bool doesExist = 0;
-	for (size_t i = 0; i < weapons.getSize(); i++)
-	{
-		if (i == index)
-		{
-			doesExist = 1;
-			break;
-		}
-	}
-
-	if (!doesExist)
-	{
-		throw "This weapon does not exist!";
-		return false;
-	}
-
-	weapons.popAt(index);
-}
-
-bool Regiment::promoteSoldier(size_t)
-{
-	return false;
-}
-
-bool Regiment::awardSoldier(size_t, Specializations)
-{
-	return false;
-}
-
-void Regiment::fixMachinery()
-{
-	for (size_t i = 0; i < machinery.getSize(); i++)
-	{
-		machinery[i]->fix();
-	}
-}
-
-void Regiment::fixWeapons()
-{
-	for (size_t i = 0; i < weapons.getSize(); i++)
-	{
-		weapons[i]->fix();
-	}
-}
-
-void Regiment::restockFuel()
-{
-	for (size_t i = 0; i < machinery.getSize(); i++)
-	{
-		if (machinery[i]->getType() == MachineryType::Vehicle)
-		{
-			machinery[i]->restockFuel();
-		}
-		break;
-	}
-}
-
-void Regiment::restockRounds()
-{
-	for (size_t i = 0; i < machinery.getSize(); i++)
-	{
-		if (machinery[i]->getType() == MachineryType::Artillery)
-		{
-			machinery[i]->restockRounds();
-		}
-		break;
-	}
-}
-
-void Regiment::restockAmmoAR()
-{
-	for (size_t i = 0; i < weapons.getSize(); i++)
-	{
-		if (weapons[i]->getType() == WeaponType::AssaultRiffle)
-		{
-			weapons[i]->restockAmmo();
-		}
-		break;
-	}
-}
-
-void Regiment::restockAmmoMG()
-{
-	for (size_t i = 0; i < weapons.getSize(); i++)
-	{
-		if (weapons[i]->getType() == WeaponType::MachineGun)
-		{
-			weapons[i]->restockAmmo();
-		}
-		break;
-	}
-}
-
-void Regiment::restockAmmoP()
-{
-	for (size_t i = 0; i < weapons.getSize(); i++)
-	{
-		if (weapons[i]->getType() == WeaponType::Pistol)
-		{
-			weapons[i]->restockAmmo();
-		}
-		break;
-	}
-}
-
-void Regiment::restockAmmoSR()
-{
-	for (size_t i = 0; i < weapons.getSize(); i++)
-	{
-		if (weapons[i]->getType() == WeaponType::SniperRiffle)
-		{
-			weapons[i]->restockAmmo();
-		}
-		break;
-	}
-}
-
-void Regiment::militaryTraning()
-{
 }

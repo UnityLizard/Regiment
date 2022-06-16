@@ -1,4 +1,6 @@
-#include"Mortar.h"
+#include "Mortar.h"
+
+unsigned Mortar::roundsReserve = 0;
 
 Mortar::Mortar()
 {
@@ -17,7 +19,7 @@ Machinery* Mortar::clone() const
 	return new Mortar(*this);
 }
 
-void Mortar::restockRounds() const
+void Mortar::restockRounds()
 {
 	roundsReserve = MAX_MORTAR_ROUNDS;
 }

@@ -1,6 +1,6 @@
 #pragma once
 
-#include"Artillery.h"
+#include "Artillery.h"
 
 const unsigned MAX_ANTI_TANK_ROUNDS = 250;
 
@@ -14,7 +14,5 @@ public:
 
 	Machinery* clone() const override;
 
-	void restockRounds() const override;
+	static void restockRounds();
 };
-
-unsigned Anti_Tank::roundsReserve = 0;

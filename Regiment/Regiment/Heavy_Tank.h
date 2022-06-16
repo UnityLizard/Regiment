@@ -1,8 +1,6 @@
 #pragma once
 
-#include"Tank.h"
-
-const unsigned MAX_HEAVY_TANK_ROUNDS_RESERVE = 75;
+#include "Tank.h"
 
 class Heavy_Tank : public Tank
 {
@@ -14,7 +12,5 @@ public:
 
 	Machinery* clone() const override;
 
-	void restockRounds() const override;
+	static void restockRounds();
 };
-
-unsigned Heavy_Tank::roundsReserve = 0;

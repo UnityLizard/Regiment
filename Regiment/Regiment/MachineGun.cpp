@@ -1,5 +1,8 @@
 #include "MachineGun.h"
 
+const unsigned int MAX_AMMO_MG = 120300;
+unsigned MachineGun::ammoReserve = 0;
+
 MachineGun::MachineGun()
 {
 	weight = 10.5;

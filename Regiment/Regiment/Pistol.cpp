@@ -1,5 +1,8 @@
 #include "Pistol.h"
 
+const unsigned int MAX_AMMO_P = 5010;
+unsigned Pistol::ammoReserve = 0;
+
 Pistol::Pistol()
 {
 	weight = 0.68;

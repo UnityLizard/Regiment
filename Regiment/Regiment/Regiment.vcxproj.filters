@@ -206,5 +206,11 @@
     <ClCompile Include="AssaultRiffle.cpp">
       <Filter>Source Files\Weapons</Filter>
     </ClCompile>
+    <ClCompile Include="Tank.cpp">
+      <Filter>Source Files\Machinery</Filter>
+    </ClCompile>
+    <ClCompile Include="Artillery.cpp">
+      <Filter>Source Files\Machinery</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

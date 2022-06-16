@@ -1,4 +1,4 @@
-#include"Machinery.h"
+#include "Machinery.h"
 
 const unsigned Machinery::getcrewSize() const
 {

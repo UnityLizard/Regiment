@@ -1,11 +1,13 @@
-#include"Vehicle.h"
+#include "Vehicle.h"
+
+float Vehicle::fuelReserve = 0.0;
 
 const unsigned Vehicle::getKMH() const
 {
 	return kmh;
 }
 
-const unsigned Vehicle::getFuelReserve() const
+const float Vehicle::getFuelReserve() const
 {
 	return fuelReserve;
 }

@@ -1,9 +1,11 @@
 #pragma once
 
-#include"Vehicle.h"
+#include "Vehicle.h"
 
 class Tank :public Vehicle
 {
+protected:
+	unsigned armorThickness;
 public:
-	virtual void restockRounds() const = 0 ;
+	const unsigned getArmorThickness() const;
 };
