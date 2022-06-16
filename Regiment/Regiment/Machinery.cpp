@@ -1,17 +1,20 @@
 #include"Machinery.h"
 
-unsigned Machinery::getcrewSize() const
+const unsigned Machinery::getcrewSize() const
 {
 	return crewSize;
 }
-Condition Machinery::getCondition() const
+
+const MachineryType Machinery::getType() const
+{
+	return type;
+}
+
+const Condition Machinery::getCondition() const
 {
 	return condition;
 }
-unsigned Machinery::getWeight() const
-{
-	return weight;
-}
+
 void Machinery::fix()
 {
 	if (condition != Condition::Perfect)

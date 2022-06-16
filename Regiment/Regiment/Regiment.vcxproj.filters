@@ -129,6 +129,9 @@
     <ClInclude Include="Medal.h">
       <Filter>Header Files\Enums</Filter>
     </ClInclude>
+    <ClInclude Include="MachineryType.h">
+      <Filter>Header Files\Enums</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="String.cpp">
@@ -182,9 +185,6 @@
     <ClCompile Include="Vehicle.cpp">
       <Filter>Source Files\Machinery</Filter>
     </ClCompile>
-    <ClCompile Include="Tank.cpp">
-      <Filter>Source Files\Machinery</Filter>
-    </ClCompile>
     <ClCompile Include="Mortar.cpp">
       <Filter>Source Files\Machinery</Filter>
     </ClCompile>
@@ -198,9 +198,6 @@
       <Filter>Source Files\Machinery</Filter>
     </ClCompile>
     <ClCompile Include="Heavy_Tank.cpp">
-      <Filter>Source Files\Machinery</Filter>
-    </ClCompile>
-    <ClCompile Include="Artillery.cpp">
       <Filter>Source Files\Machinery</Filter>
     </ClCompile>
     <ClCompile Include="Anti_Tank.cpp">

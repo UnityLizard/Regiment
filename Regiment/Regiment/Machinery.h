@@ -1,18 +1,20 @@
 #pragma once
-#include<iostream>
-const unsigned ROUNDS_PREPARED = 20;
-enum Condition{Perfect,Poor,Good};
+
+#include "Condition.h"
+#include "MachineryType.h"
+
 class Machinery
 {
 protected:
-	Condition condition;
 	unsigned crewSize;
-	unsigned weight;
-
+	MachineryType type;
+	Condition condition;
 public:
-	unsigned getcrewSize() const; 
-	Condition getCondition() const;
-	unsigned getWeight() const;
-	void fix();
+	const unsigned getcrewSize() const;
+	const MachineryType getType() const;
+	const Condition getCondition() const;
+
 	virtual Machinery* clone() const = 0;
+
+	void fix();
 };

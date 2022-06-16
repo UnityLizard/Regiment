@@ -1,17 +1,21 @@
 #include"Vehicle.h"
-Machinery* Vehicle::clone() const
+
+const unsigned Vehicle::getKMH() const
 {
-	return new Vehicle(*this);
+	return kmh;
 }
-bool Vehicle::restockFuel()
+
+const unsigned Vehicle::getFuelReserve() const
 {
-	if (fuelReserve <= 0)
-	{
-		return false;
-	}
-	return true;
+	return fuelReserve;
 }
-unsigned Vehicle::getFuelConsumation() const
+
+const float Vehicle::getFuelConsumption() const
 {
 	return fuelConsumption;
+}
+
+void Vehicle::restockFuel()
+{
+	fuelReserve = MAX_FUEL_RESERVE;
 }
